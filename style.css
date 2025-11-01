@@ -509,6 +509,86 @@ footer p {
     font-style: italic;
 }
 
+/* Smooth Scroll-in Animations */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-element.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-title {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-title.title-animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Specific animations for different elements */
+.timeline-item.fade-in-element {
+    transform: translateX(-50px);
+    opacity: 0;
+}
+
+.timeline-item:nth-child(even).fade-in-element {
+    transform: translateX(50px);
+}
+
+.timeline-item.animate-in {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.project-card.fade-in-element {
+    transform: translateY(50px) scale(0.95);
+}
+
+.project-card.animate-in {
+    transform: translateY(0) scale(1);
+}
+
+.skill-category.fade-in-element {
+    transform: translateY(40px) rotateX(-10deg);
+}
+
+.skill-category.animate-in {
+    transform: translateY(0) rotateX(0);
+}
+
+.contact-item.fade-in-element {
+    transform: scale(0.9) translateY(30px);
+}
+
+.contact-item.animate-in {
+    transform: scale(1) translateY(0);
+}
+
+/* Add smooth transitions to hero elements */
+.hero-content {
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-buttons .btn {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-buttons .btn:first-child {
+    animation-delay: 0.3s;
+}
+
+.hero-buttons .btn:last-child {
+    animation-delay: 0.5s;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
