@@ -1,12 +1,351 @@
-<!DOCTYPE html>
+<!--
+README (top-of-file instructions)
+- How to open locally:
+  1. Place index.html, styles.css and script.js in the same folder.
+  2. Open index.html in any modern browser (Chrome, Edge, Firefox, Safari).
+- Where to edit content:
+  - Main content driven by semantic HTML inside <main>.
+  - Work experience, projects, education and contact are plain HTML sections and easy to edit.
+- Where to change theme colors:
+  - Edit CSS custom properties (variables) at the top of styles.css under :root and --theme-... declarations.
+- Notes:
+  - No build step required. Uses a Google Font link.
+  - Script is non-blocking (deferred). Images use dimensions to avoid layout shifts.
+-->
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Basic Website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Darrshan Erettai MunianDy — Cybersecurity Analyst</title>
+  <meta name="description" content="Cybersecurity Analyst skilled in SIEM, DDoS mitigation, incident response, and digital forensics. Resume-driven portfolio of projects, skills, and contact information." />
+  <meta name="theme-color" content="#0f0a12" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Darrshan Erettai MunianDy — Cybersecurity Analyst" />
+  <meta property="og:description" content="Cybersecurity Analyst skilled in SIEM, DDoS mitigation, incident response, and digital forensics. View experience, projects, and contact info." />
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'%3E%3Crect width='100%25' height='100%25' fill='%230b0620'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='48' fill='%23d8c7ff' text-anchor='middle'%3EDarrshan%20E.%3C/text%3E%3C/svg%3E" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Darrshan Erettai Muniandy",
+    "jobTitle": "Cybersecurity Analyst",
+    "telephone": "+60137123184",
+    "email": "darrshan2003@gmail.com",
+    "alumniOf": "Swinburne University of Technology",
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Skip to content link is visible when focused for accessibility. -->
 </head>
-<body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is a simple paragraph on my basic homepage.</p>
+<body class="theme-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Simple hamburger icon with accessible label -->
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+      </button>
+
+      <div class="brand">
+        <a href="#hero" class="brand-link">
+          <svg class="logo" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="1" y="1" width="22" height="22" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+            <path d="M6 16 L10 8 L14 16 Z" fill="currentColor"></path>
+          </svg>
+          <span class="brand-text">Darrshan E.</span>
+        </a>
+      </div>
+
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="color-toggle" class="btn-icon" aria-pressed="false" title="Toggle dark/light theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"></circle></svg>
+        </button>
+        <a class="btn-primary" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero" role="region" aria-labelledby="hero-heading">
+    <div class="container hero-inner">
+      <div class="hero-card card glass reveal">
+        <div class="hero-left">
+          <h1 id="hero-heading" class="title">Darrshan Erettai Muniandy</h1>
+          <p class="subtitle">Cybersecurity Analyst — SIEM, DDoS mitigation, incident response, digital forensics</p>
+
+          <p class="summary">
+            Cybersecurity Analyst with proven experience in DDoS monitoring and mitigation, SIEM operations, and incident ticketing workflows. Skilled in detecting and analyzing security events and supporting remediation efforts.
+          </p>
+
+          <ul class="contact-inline" aria-label="Contact details">
+            <li><strong>Location:</strong> Bandar Putera, Klang, Selangor</li>
+            <li><strong>Phone:</strong> <a href="tel:+60137123184">+60 13-712 3184</a></li>
+            <li><strong>Email:</strong>
+              <button id="copy-email" class="link-btn" data-email="darrshan2003@gmail.com" aria-label="Copy email to clipboard">
+                darrshan2003@gmail.com
+                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 2H8a2 2 0 0 0-2 2v12h2V4h8V2zM6 8h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8z" fill="currentColor"/></svg>
+              </button>
+            </li>
+          </ul>
+
+          <p class="cta-row">
+            <a class="btn-outline" href="#projects">View projects</a>
+            <a class="btn-primary" href="mailto:darrshan2003@gmail.com">Hire / Contact</a>
+          </p>
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+          <!-- Stylized avatar placeholder -->
+          <div class="avatar" role="img" aria-label="Avatar placeholder">
+            <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#9b5cff"/>
+                  <stop offset="1" stop-color="#20e6d2"/>
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="120" height="120" rx="18" fill="#0b0620"/>
+              <circle cx="60" cy="44" r="22" fill="url(#g1)" opacity="0.14"/>
+              <rect x="26" y="74" width="68" height="26" rx="8" fill="url(#g1)" opacity="0.08"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" tabindex="-1">
+    <!-- ABOUT -->
+    <section id="about" class="container section" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="section-title">About</h2>
+      <div class="card glass reveal">
+        <p>
+          I operate at the intersection of detection, investigation, and remediation. My focus is on SIEM operations, DDoS monitoring and mitigation, threat hunting, and digital forensics. I enjoy automating repetitive tasks and turning noisy alerts into actionable intelligence.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="container section" aria-labelledby="experience-heading">
+      <h2 id="experience-heading" class="section-title">Experience</h2>
+
+      <article class="card reveal" aria-labelledby="exp-1-title">
+        <header>
+          <h3 id="exp-1-title" class="job-title">Cybersecurity Analyst, Intern — (Aug 2025 - Present)</h3>
+          <p class="muted">Bandar Putera, Klang, Selangor</p>
+        </header>
+        <ul class="job-bullets">
+          <li>Autonomously managed the SIEM offense queue: investigated and resolved security alerts end-to-end to mitigate threats.</li>
+          <li>Conducted proactive threat hunting by correlating SIEM data with threat intelligence & IoCs, reducing false positives.</li>
+          <li>Investigated email threats via quarantine and managed DDoS attacks from detection to customer notification.</li>
+          <li>Monitored system health for Event Collectors and drafted initial client incident summaries.</li>
+          <li>Trained on Stellar Cyber Open XDR and PRE Security AI SOC to improve automated detection and response.</li>
+        </ul>
+      </article>
+
+      <article class="card reveal" aria-labelledby="exp-2-title">
+        <header>
+          <h3 id="exp-2-title" class="job-title">Website Developer, Freelance — TimedotCom / Mr Digital (Dec 2023 - Aug 2025)</h3>
+          <p class="muted">Freelance web & full-stack development</p>
+        </header>
+        <ul class="job-bullets">
+          <li>Built responsive websites from concept to deployment, focusing on UX and cross-device performance.</li>
+          <li>Worked both front-end and back-end stack; partnered with clients to meet requirements and deliver reliable solutions.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="container section" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+        <article class="project-card card reveal" aria-labelledby="p1">
+          <h3 id="p1">AI-Powered Honeypot Threat Intelligence Platform</h3>
+          <p class="project-summary">Architected a virtualized lab with a Kali Linux honeypot to capture SSH attacks, processed logs with a Python pipeline, trained a Scikit-learn model to classify attacks, and built a Flask dashboard for visualization and realtime insights.</p>
+          <p class="project-tech"><strong>Tech:</strong> Python, Flask, Scikit-learn, Kali Linux, Docker</p>
+        </article>
+
+        <article class="project-card card reveal" aria-labelledby="p2">
+          <h3 id="p2">Forensic Investigation — Imanuel Leet-Hacker Case</h3>
+          <p class="project-summary">Led an investigation into website defacement and social account takeover. Acquired digital evidence, reconstructed timelines, and produced a formal forensic report used to support further action.</p>
+          <p class="project-tech"><strong>Tech:</strong> FTK/Autopsy, log analysis, timeline reconstruction</p>
+        </article>
+
+        <article class="project-card card reveal" aria-labelledby="p3">
+          <h3 id="p3">Mathology — In-house Management System (Final Year Project)</h3>
+          <p class="project-summary">Built a web system to automate scheduling, attendance and payments for a learning centre. Implemented secure server-side patterns and an SQL backend to protect user data.</p>
+          <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript, PHP, MySQL</p>
+        </article>
+
+        <article class="project-card card reveal" aria-labelledby="p4">
+          <h3 id="p4">IoT Obstacle Avoidance Car</h3>
+          <p class="project-summary">Developed an autonomous vehicle prototype using Arduino and Raspberry Pi for real-time obstacle detection and control, integrating Python for data handling and motion logic.</p>
+          <p class="project-tech"><strong>Tech:</strong> Arduino, Raspberry Pi, Python, Sensors</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="container section" aria-labelledby="skills-heading">
+      <h2 id="skills-heading" class="section-title">Skills</h2>
+      <div class="skills-grid card reveal">
+        <div>
+          <h4>Security Ops</h4>
+          <ul>
+            <li>SIEM & Log Analysis</li>
+            <li>Incident Response</li>
+            <li>DDoS Mitigation</li>
+            <li>Threat Hunting</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Forensics & Tools</h4>
+          <ul>
+            <li>Digital Forensics (FTK, Autopsy)</li>
+            <li>NMap, Ghidra, Metasploitable</li>
+            <li>Honeypot Deployment</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Networking & Cloud</h4>
+          <ul>
+            <li>Routing, Switching, Firewalling</li>
+            <li>AWS & Virtualization</li>
+            <li>Network Hardening</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Programming</h4>
+          <ul>
+            <li>Python, C++, PHP, JavaScript, Ruby, HTML5, CSS</li>
+            <li>Flask, Scikit-learn</li>
+            <li>MySQL, PostgreSQL</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="container section" aria-labelledby="education-heading">
+      <h2 id="education-heading" class="section-title">Education</h2>
+
+      <div class="card reveal">
+        <h3>Bachelor of Computer Science (Cybersecurity)</h3>
+        <p class="muted">Swinburne University of Technology — Feb 2023 - Dec 2025</p>
+        <p>Relevant coursework: IT Security, Network Security & Resilience, Malware Analysis, Cloud Computing</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Foundation in IT — INTI International College</h3>
+        <p class="muted">Jan 2022 - Dec 2022 — CGPA 3.3</p>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS / ACHIEVEMENTS -->
+    <section id="certs" class="container section" aria-labelledby="certs-heading">
+      <h2 id="certs-heading" class="section-title">Certifications & Achievements</h2>
+      <div class="certs-grid card reveal">
+        <ul>
+          <li>Microsoft Security Essentials Professional — Oct 2025</li>
+          <li>Fortinet Certified Associate in Cybersecurity — Apr 2025</li>
+          <li>CCNA: Enterprise Networking, Security, and Automation — Aug 2024</li>
+        </ul>
+        <p class="muted">Achievements: Academy Merit awards (Aug 2023, Aug 2024, Mar 2025). Placed 101/4975 in HackTheCode Cybersecurity Hackathon (Mar 2025).</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="section-title">Contact</h2>
+
+      <div class="contact-grid">
+        <div class="card reveal">
+          <h3>Get in touch</h3>
+          <p>Prefer email for initial contact. I respond reliably to professional enquiries about SOC roles, freelance web work, or collaboration on research/projects.</p>
+
+          <dl>
+            <dt>Phone</dt><dd><a href="tel:+60137123184">+60 13-712 3184</a></dd>
+            <dt>Email</dt><dd><button id="copy-email-2" class="link-btn" data-email="darrshan2003@gmail.com">darrshan2003@gmail.com</button></dd>
+            <dt>Referrals</dt>
+            <dd>
+              <ul>
+                <li>Veynishaa Kumar — Cloud Engineer — vennykumar97@gmail.com</li>
+                <li>Shanmugam Sundram — Lecturer — shanmugas.asamy@newinti.edu.my</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <form id="contact-form" class="card form-card reveal" action="#" method="post" novalidate aria-label="Contact form">
+          <h3>Message me</h3>
+          <p class="muted">This form is a static demo. Client-side validation included; hook to your form processor or use mailto/honeypot as needed.</p>
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required aria-required="true" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required aria-required="true" />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Send message</button>
+            <button type="reset" class="btn-outline">Reset</button>
+          </div>
+
+          <div id="form-status" role="status" aria-live="polite" class="form-status"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>
+        <p>&copy; <span id="year"></span> Darrshan Erettai Muniandy — Cybersecurity Analyst. <span class="muted">Designed for recruiters & hiring managers.</span></p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#print" id="print-resume">Print</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
 </body>
 </html>
