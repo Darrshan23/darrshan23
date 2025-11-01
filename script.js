@@ -48,31 +48,53 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Intersection Observer for Animations
+// Enhanced Intersection Observer for Smooth Scroll Animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            // Add animation class when element enters viewport
+            entry.target.classList.add('animate-in');
+            
+            // Optional: Stop observing after animation (remove if you want repeat animations)
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe all animated elements
+// Observe all animated elements with staggered delays
 const animatedElements = document.querySelectorAll(
-    '.project-card, .skill-category, .timeline-item, .cert-item, .contact-item'
+    '.project-card, .skill-category, .timeline-item, .cert-item, .contact-item, .about-text, .about-details'
 );
 
-animatedElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+animatedElements.forEach((el, index) => {
+    // Add initial hidden state
+    el.classList.add('fade-in-element');
+    
+    // Add staggered delay for elements in the same section
+    const delay = (index % 4) * 0.1; // Stagger by 0.1s for every 4 items
+    el.style.transitionDelay = `${delay}s`;
+    
     observer.observe(el);
+});
+
+// Separate observer for section titles
+const titleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('title-animate-in');
+            titleObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.section-title').forEach(title => {
+    title.classList.add('fade-in-title');
+    titleObserver.observe(title);
 });
 
 // Active Navigation Link Highlight
