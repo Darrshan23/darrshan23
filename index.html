@@ -13,7 +13,10 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
-            <div class="nav-brand">DEM</div>
+            <div class="nav-brand">
+                <span class="brand-text">Darrshan</span>
+                <span class="brand-dot"></span>
+            </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -32,16 +35,56 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-particles"></div>
         <div class="container">
-            <div class="hero-content">
-                <div class="glitch-wrapper">
-                    <h1 class="glitch" data-text="DARRSHAN ERETTAI MUNIANDY">DARRSHAN ERETTAI MUNIANDY</h1>
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <div class="glitch-wrapper">
+                        <h1 class="glitch" data-text="DARRSHAN ERETTAI MUNIANDY">DARRSHAN ERETTAI MUNIANDY</h1>
+                    </div>
+                    <h2 class="subtitle">
+                        <span class="typing-text">Cybersecurity Analyst</span>
+                        <span class="cursor">|</span>
+                    </h2>
+                    <p class="tagline">Defending Digital Frontiers | SIEM Operations | Incident Response</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Get In Touch</span>
+                            <span class="btn-icon">→</span>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>View Projects</span>
+                            <span class="btn-icon">↓</span>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="8">0</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="4">0</div>
+                            <div class="stat-label">Major Projects</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="2">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="subtitle">Cybersecurity Analyst</h2>
-                <p class="tagline">Defending Digital Frontiers | SIEM Operations | Incident Response</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                <div class="hero-image-container">
+                    <div class="image-backdrop"></div>
+                    <div class="image-wrapper">
+                        <img src="Images/darrshan.png" alt="Darrshan Erettai Muniandy" class="hero-image">
+                        <div class="image-border"></div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="float-element" style="top: 10%; left: -10%;">🔒</div>
+                        <div class="float-element" style="top: 70%; right: -10%;">🛡️</div>
+                        <div class="float-element" style="bottom: 20%; left: -15%;">⚡</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,20 +158,22 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
+                    <div class="project-icon">🖥️</div>
                     <div class="project-header">
-                        <h3>AI-Powered Honeypot Threat Intelligence Platform</h3>
+                        <h3>Windows-Based SOC with Wazuh and a Web-Based Threat Intelligence Platform</h3>
                     </div>
                     <div class="project-body">
-                        <p>Architected a virtualized lab with a Kali Linux honeypot. Engineered a Python data pipeline for log processing and developed a Scikit-learn model to classify attack types. Built an interactive Flask dashboard to visualize real-time attack statistics.</p>
+                        <p>Architected a comprehensive Security Operations Center using Wazuh on Windows infrastructure. Developed an integrated web-based threat intelligence dashboard that aggregates security alerts, correlates threat data, and provides real-time visualization of security events and incident trends.</p>
                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Honeypot</span>
+                            <span class="tag">Wazuh</span>
+                            <span class="tag">Windows SOC</span>
+                            <span class="tag">Threat Intelligence</span>
+                            <span class="tag">Dashboard</span>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="project-icon">🔍</div>
                     <div class="project-header">
                         <h3>Forensic Investigation: Imanuel Leet-Hacker Case</h3>
                     </div>
@@ -143,6 +188,7 @@
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="project-icon">💼</div>
                     <div class="project-header">
                         <h3>Mathology In-house Management System</h3>
                     </div>
@@ -157,6 +203,7 @@
                     </div>
                 </div>
                 <div class="project-card">
+                    <div class="project-icon">🚗</div>
                     <div class="project-header">
                         <h3>IoT Obstacle Avoidance Car</h3>
                     </div>
