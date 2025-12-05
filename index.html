@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darrshan Erettai Muniandy | Cybersecurity Analyst</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="cyber-grid"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-brand">DEM</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Announcement Slideshow -->
+    <section class="announcement-hero">
+        <div class="announcement-container">
+            <div class="announcement-slides">
+                <!-- Slide 1: Open to Work -->
+                <div class="announcement-slide active">
+                    <div class="announcement-content">
+                        <div class="announcement-image">
+                            <div class="profile-avatar">
+                                <div class="avatar-initials">DEM</div>
+                                <div class="avatar-status">
+                                    <span class="status-indicator"></span>
+                                    <span class="status-text">Available</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="announcement-text">
+                            <h1 class="announcement-title">🚀 Open to <span class="highlight">Work</span></h1>
+                            <h2 class="announcement-subtitle">Cybersecurity Analyst & Penetration Tester</h2>
+                            <p class="announcement-description">
+                                Seeking challenging roles in Security Operations, Threat Analysis, or Offensive Security.
+                                Available for full-time positions starting December 2025.
+                            </p>
+                            <div class="announcement-details">
+                                <div class="detail-card">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <div>
+                                        <h3>Defensive Security</h3>
+                                        <p>SIEM, Incident Response, Threat Hunting</p>
+                                    </div>
+                                </div>
+                                <div class="detail-card">
+                                    <i class="fas fa-crosshairs"></i>
+                                    <div>
+                                        <h3>Offensive Security</h3>
+                                        <p>Penetration Testing, Vulnerability Assessment</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#contact" class="btn btn-announcement">
+                                <i class="fas fa-paper-plane"></i> Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: CTF Announcement -->
+                <div class="announcement-slide">
+                    <div class="announcement-content">
+                        <div class="announcement-image">
+                            <div class="ctf-team">
+                                <div class="team-member">
+                                    <div class="member-avatar">
+                                        <span>D</span>
+                                    </div>
+                                    <p class="member-name">Darrshan</p>
+                                </div>
+                                <div class="team-member">
+                                    <div class="member-avatar">
+                                        <span>AH</span>
+                                    </div>
+                                    <p class="member-name">Alex</p>
+                                </div>
+                                <div class="team-member">
+                                    <div class="member-avatar">
+                                        <span>MS</span>
+                                    </div>
+                                    <p class="member-name">Maya</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="announcement-text">
+                            <h1 class="announcement-title">🏆 CTF <span class="highlight">Competition</span></h1>
+                            <h2 class="announcement-subtitle">Curtin University Cybersecurity Challenge</h2>
+                            <p class="announcement-description">
+                                Participating in the annual CTF competition organized by Curtin University.
+                                Sharpening offensive security skills in a competitive environment.
+                            </p>
+                            <div class="ctf-details">
+                                <div class="ctf-info">
+                                    <div class="info-item">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <div>
+                                            <h4>Date & Time</h4>
+                                            <p>December 6-7, 2025</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-users"></i>
+                                        <div>
+                                            <h4>Team Name</h4>
+                                            <p class="team-name">Evolved Hackers Club</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-tasks"></i>
+                                        <div>
+                                            <h4>Challenges</h4>
+                                            <p>Web Exploitation, Forensics, Crypto</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ctf-tags">
+                                <span class="tag">Capture The Flag</span>
+                                <span class="tag">Competitive Security</span>
+                                <span class="tag">Team Challenge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide Indicators -->
+            <div class="slide-indicators">
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+            </div>
+            
+            <!-- Auto-slide Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            
+            <!-- Manual Navigation Buttons -->
+            <button class="slide-nav prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slide-nav next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="glitch-wrapper">
+                    <h1 class="glitch" data-text="DARRSHAN ERETTAI MUNIANDY">DARRSHAN ERETTAI MUNIANDY</h1>
+                </div>
+                <h2 class="subtitle">Cybersecurity Analyst</h2>
+                <p class="tagline">Defending Digital Frontiers | SIEM Operations | Incident Response</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rest of your existing HTML remains the same -->
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Cybersecurity Analyst with proven experience in DDoS monitoring and mitigation, SIEM operations, and incident ticketing workflows. Skilled in detecting and analyzing security events, managing incident response tickets, and supporting remediation efforts.</p>
+                    <p>Strong analytical thinker with a continuous learning mindset, ready to drive organizational resilience and sharpen technical expertise across the cybersecurity spectrum.</p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Location:</span>
+                            <span>Bandar Putera, Klang, Selangor</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Email:</span>
+                            <span>darrshan2003@gmail.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Phone:</span>
+                            <span>+60 13-712 3184</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Analyst, Intern</h3>
+                        <h4>TimedotCom</h4>
+                        <ul>
+                            <li>Autonomously managed the SIEM offense queue, performing end-to-end investigation and resolution of security alerts</li>
+                            <li>Conducted proactive threat hunting by correlating SIEM data with threat intelligence and IoCs</li>
+                            <li>Investigated email threats via the quarantine system</li>
+                            <li>Managed DDoS attacks from detection to customer notification</li>
+                            <li>Monitored system health (Event Collectors), performing diagnostics and drafting initial client incident summaries</li>
+                            <li>Trained on advanced platforms: Stellar Cyber Open XDR and PRE Security AI SOC</li>
+                            <li>Collaborated in team reviews of complex security incidents within the live Security Operations Center (CySOC)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Website Developer, Freelance</h3>
+                        <h4>Mr Digital | Dec 2023 - Aug 2025</h4>
+                        <ul>
+                            <li>Designed and developed custom, responsive websites from concept to deployment</li>
+                            <li>Engineered full-stack features, building robust front-end interfaces and efficient back-end functionality</li>
+                            <li>Partnered directly with clients throughout the project lifecycle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>AI-Powered Honeypot Threat Intelligence Platform</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Architected a virtualized lab with a Kali Linux honeypot. Engineered a Python data pipeline for log processing and developed a Scikit-learn model to classify attack types. Built an interactive Flask dashboard to visualize real-time attack statistics.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Honeypot</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Forensic Investigation: Imanuel Leet-Hacker Case</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Led a digital forensic investigation into cybercrimes including website defacement and social media takeover. Acquired and analyzed digital evidence using industry-standard tools and compiled a detailed forensic report.</p>
+                        <div class="project-tags">
+                            <span class="tag">Digital Forensics</span>
+                            <span class="tag">FTK</span>
+                            <span class="tag">Autopsy</span>
+                            <span class="tag">Investigation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Mathology In-house Management System</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Engineered a web-based system to automate class scheduling, attendance, and payment management. Developed the full-stack application using HTML, CSS, JavaScript, PHP & SQL with secure coding practices.</p>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Full-Stack</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>IoT Obstacle Avoidance Car</h3>
+                    </div>
+                    <div class="project-body">
+                        <p>Developed an autonomous vehicle with real-time obstacle detection. Programmed microcontrollers (Arduino) and integrated a Raspberry Pi. Engineered the system using Python for sensor data and motion control.</p>
+                        <div class="project-tags">
+                            <span class="tag">IoT</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Arduino</span>
+                            <span class="tag">Raspberry Pi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Cybersecurity & Forensics</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Incident Response</span>
+                        <span class="skill-item">Digital Forensics</span>
+                        <span class="skill-item">SIEM & Log Analysis</span>
+                        <span class="skill-item">Malware Analysis</span>
+                        <span class="skill-item">DDoS Mitigation</span>
+                        <span class="skill-item">IDS/IPS</span>
+                        <span class="skill-item">Honeypot Deployment</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Networking & Cloud</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Network Security</span>
+                        <span class="skill-item">OSPF / EIGRP / RIP</span>
+                        <span class="skill-item">Firewalls (ASA)</span>
+                        <span class="skill-item">VPN</span>
+                        <span class="skill-item">AWS / EC2</span>
+                        <span class="skill-item">Cisco Routers</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Development</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">PHP</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">HTML5 / CSS</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">Flask</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">NMap</span>
+                        <span class="skill-item">Metasploit</span>
+                        <span class="skill-item">FTK / Autopsy</span>
+                        <span class="skill-item">Splunk</span>
+                        <span class="skill-item">Linux Admin</span>
+                        <span class="skill-item">Active Directory</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">Microsoft Security Essentials Professional Certificate</div>
+                <div class="cert-item">SIEM: Event Management with Splunk Security</div>
+                <div class="cert-item">Fortinet Certified Associate in Cybersecurity</div>
+                <div class="cert-item">Fortinet FortiGate 7.4 Operator</div>
+                <div class="cert-item">Cisco Network Security</div>
+                <div class="cert-item">CCNA: Enterprise Networking, Security, and Automation</div>
+                <div class="cert-item">CCNAv7: Switching, Routing, and Wireless Essentials</div>
+                <div class="cert-item">CCNA: Introduction to Networks</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:darrshan2003@gmail.com">darrshan2003@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+60137123184">+60 13-712 3184</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Bandar Putera, Klang, Selangor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Darrshan Erettai Muniandy. All rights reserved.</p>
+            <p class="footer-tagline">Securing the digital world, one threat at a time.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
