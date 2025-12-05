@@ -3,433 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darrshan Erettai Muniandy | Cybersecurity Analyst</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Evolved Hackers Club | Cybersecurity Team</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Logo/team-logo.png">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="cyber-grid"></div>
-    
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <div class="nav-brand">DEM</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="Images/LOGO.png" alt="Evolved Hackers Club Logo">
+                    <span>Evolved Hackers Club</span>
+                </a>
+                
+                <button class="menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger"></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+                    <li class="nav-item"><a href="#ctf" class="nav-link">CTF</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
             </div>
-        </div>
-    </nav>
-
-    <!-- Announcement Slideshow -->
-    <section class="announcement-hero">
-        <div class="announcement-container">
-            <div class="announcement-slides">
-                <!-- Slide 1: Open to Work -->
-                <div class="announcement-slide active">
-                    <div class="announcement-content">
-                        <div class="announcement-image">
-                            <div class="profile-avatar">
-                                <div class="avatar-image">
-                                    <!-- Add your profile image here -->
-                                    <!-- <img src="images/profile.jpg" alt="Darrshan Erettai Muniandy" class="profile-pic"> -->
-                                    <div class="avatar-initials">DEM</div>
-                                </div>
-                                <div class="avatar-status">
-                                    <span class="status-indicator"></span>
-                                    <span class="status-text">Available for Work</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="announcement-text">
-                            <h1 class="announcement-title">🚀 Open to <span class="highlight">Work</span></h1>
-                            <h2 class="announcement-subtitle">Cybersecurity Analyst & Penetration Tester</h2>
-                            <p class="announcement-description">
-                                Seeking challenging roles in Security Operations, Threat Analysis, or Offensive Security.
-                                Available for full-time positions starting December 2025.
-                            </p>
-                            <div class="announcement-details">
-                                <div class="detail-card">
-                                    <i class="fas fa-shield-alt"></i>
-                                    <div>
-                                        <h3>Defensive Security</h3>
-                                        <p>SIEM, Incident Response, Threat Hunting</p>
-                                    </div>
-                                </div>
-                                <div class="detail-card">
-                                    <i class="fas fa-crosshairs"></i>
-                                    <div>
-                                        <h3>Offensive Security</h3>
-                                        <p>Penetration Testing, Vulnerability Assessment</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="announcement-actions">
-                                <a href="#contact" class="btn btn-announcement">
-                                    <i class="fas fa-paper-plane"></i> Contact Me
-                                </a>
-                                <a href="Resume-DARRSHAN-LGMS.pdf" class="btn btn-secondary" download>
-                                    <i class="fas fa-download"></i> Download Resume
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2: CTF Announcement -->
-                <div class="announcement-slide">
-                    <div class="announcement-content">
-                        <div class="announcement-image">
-                            <div class="ctf-team">
-                                <div class="team-member">
-                                    <div class="member-avatar">
-                                        <!-- Add your image here -->
-                                        <!-- <img src="images/profile.jpg" alt="Darrshan" class="member-pic"> -->
-                                        <div class="avatar-initials">D</div>
-                                    </div>
-                                    <p class="member-name">Darrshan</p>
-                                </div>
-                                <div class="team-member">
-                                    <div class="member-avatar">
-                                        <!-- Add teammate image here -->
-                                        <!-- <img src="images/teammate1.jpg" alt="Teammate 1" class="member-pic"> -->
-                                        <div class="avatar-initials">T1</div>
-                                    </div>
-                                    <p class="member-name">Teammate 1</p>
-                                </div>
-                                <div class="team-member">
-                                    <div class="member-avatar">
-                                        <!-- Add teammate image here -->
-                                        <!-- <img src="images/teammate2.jpg" alt="Teammate 2" class="member-pic"> -->
-                                        <div class="avatar-initials">T2</div>
-                                    </div>
-                                    <p class="member-name">Teammate 2</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="announcement-text">
-                            <h1 class="announcement-title">🏆 CTF <span class="highlight">Competition</span></h1>
-                            <h2 class="announcement-subtitle">Curtin University Cybersecurity Challenge</h2>
-                            <p class="announcement-description">
-                                Participating in the annual CTF competition organized by Curtin University on December 6-7, 2025.
-                                Sharpening offensive security skills in web exploitation, forensics, and privilege escalation.
-                            </p>
-                            <div class="ctf-details">
-                                <div class="ctf-info">
-                                    <div class="info-item">
-                                        <i class="far fa-calendar-alt"></i>
-                                        <div>
-                                            <h4>Date & Time</h4>
-                                            <p>December 6-7, 2025</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <i class="fas fa-users"></i>
-                                        <div>
-                                            <h4>Team Name</h4>
-                                            <p class="team-name">Evolved Hackers Club</p>
-                                        </div>
-                                    </div>
-                                    <div class="info-item">
-                                        <i class="fas fa-trophy"></i>
-                                        <div>
-                                            <h4>Team Size</h4>
-                                            <p>3 Members</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="announcement-actions">
-                                <div class="ctf-tags">
-                                    <span class="tag">Capture The Flag</span>
-                                    <span class="tag">Web Exploitation</span>
-                                    <span class="tag">Forensics</span>
-                                    <span class="tag">Privilege Escalation</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Slide Indicators -->
-            <div class="slide-indicators">
-                <button class="indicator active" data-slide="0"></button>
-                <button class="indicator" data-slide="1"></button>
-            </div>
-            
-            <!-- Auto-slide Progress Bar -->
-            <div class="progress-container">
-                <div class="progress-bar"></div>
-            </div>
-            
-            <!-- Manual Navigation Buttons -->
-            <button class="slide-nav prev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slide-nav next">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-    </section>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
+        <div class="hero-container">
             <div class="hero-content">
-                <div class="glitch-wrapper">
-                    <h1 class="glitch" data-text="DARRSHAN ERETTAI MUNIANDY">DARRSHAN ERETTAI MUNIANDY</h1>
+                <h1 class="hero-title fade-in">Evolved Hackers Club</h1>
+                <p class="hero-subtitle fade-in">Securing the digital frontier, one challenge at a time.</p>
+                <p class="hero-description fade-in">A dedicated cybersecurity team competing in the Curtin Malaysia CTF competition.</p>
+                <a href="#ctf" class="btn btn-primary slide-up">Learn About CTF</a>
+                <a href="#team" class="btn btn-secondary slide-up">Meet Our Team</a>
+            </div>
+            <div class="hero-visual">
+                <div class="team-hex-grid">
+                    <div class="hexagon hex-image">
+                        <img src="Images/Dhiraj.jpg" alt="Dhirajpal Singh">
+                    </div>
+                    <div class="hexagon hex-image">
+                        <img src="Images/Ivan.jpg" alt="Khor Yao Wen">
+                    </div>
+                    <div class="hexagon hex-image">
+                        <img src="Images/Darrshan.jpg" alt="Darrshan">
+                    </div>
                 </div>
-                <h2 class="subtitle">Cybersecurity Analyst</h2>
-                <p class="tagline">Defending Digital Frontiers | SIEM Operations | Incident Response | Penetration Testing</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
-                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title slide-up">About Our Team</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Cybersecurity graduate with hands-on SOC experience analyzing real attacks and threats. Actively builds offensive skills through CTFs, forensic investigations, and practical labs with tools like Burp Suite and Metasploit.</p>
-                    <p>Combines defensive insight with an adversarial mindset to identify vulnerabilities. Familiar with OWASP Top 10 and penetration testing methodologies through study and applied practice.</p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Location:</span>
-                            <span>Bandar Putera, Klang, Selangor</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Email:</span>
-                            <span>darrshan2003@gmail.com</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Phone:</span>
-                            <span>+60 13-712 3184</span>
-                        </div>
+                    <p class="about-description fade-in">
+                        <strong>Evolved Hackers Club</strong> is a collective of cybersecurity enthusiasts, ethical hackers, and digital defenders dedicated to pushing the boundaries of security knowledge and practice. We believe in using our skills for positive impact, education, and innovation in the cybersecurity landscape.
+                    </p>
+                    <p class="about-description fade-in">
+                        Our team is built on the principles of collaboration, continuous learning, and ethical responsibility. We actively participate in security research, vulnerability disclosure, and cybersecurity competitions to hone our skills and contribute to a safer digital world.
+                    </p>
+                    <p class="about-description fade-in">
+                        We are proud to announce our participation in the <strong>Curtin Malaysia Capture The Flag (CTF)</strong> competition. This event represents an opportunity to test our skills against real-world challenges and connect with the wider cybersecurity community.
+                    </p>
+                </div>
+                <div class="about-stats slide-up">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">CTF Events</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Core Members</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Challenges Solved</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Years Active</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section section-dark">
+    <!-- Team Section -->
+    <section id="team" class="section team">
         <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Cybersecurity Analyst, Intern</h3>
-                        <h4>TimedotCom</h4>
-                        <ul>
-                            <li>Analyzed real-world security incidents via SIEM alerts, investigating indicators of compromise (IoCs)</li>
-                            <li>Investigated quarantined phishing emails to analyze sender spoofing and malicious attachments</li>
-                            <li>Executed standardized response protocols for DDoS attack notifications</li>
-                            <li>Managed the incident ticketing lifecycle and documented initial findings</li>
-                            <li>Shadowed senior analysts during incident reviews to trace attacker steps</li>
-                        </ul>
+            <h2 class="section-title slide-up">Meet Our Team</h2>
+            <p class="section-subtitle fade-in">The minds behind the mission</p>
+            
+            <div class="team-grid">
+                <!-- Teammate 1 -->
+                <div class="team-member fade-in">
+                    <div class="member-photo">
+                        <img src="Images/Darrshan.jpg" alt="Darrshan - Team Lead">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#" aria-label="Darrshan's GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Darrshan's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
                     </div>
+                    <h3 class="member-name">Darrshan</h3>
+                    <p class="member-role">Team Lead</p>
+                    <p class="member-bio">Focused on network security, penetration testing, and security fundamentals. Gaining practical experience through SOC operations, continuous learning, and participation in cybersecurity competitions.</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Website Developer, Freelance</h3>
-                        <h4>Mr Digital</h4>
-                        <ul>
-                            <li>Designed and developed custom, responsive websites from concept to deployment</li>
-                            <li>Engineered full-stack features with robust front-end and efficient back-end functionality</li>
-                            <li>Partnered directly with clients throughout the project lifecycle</li>
-                        </ul>
+                
+                <!-- Teammate 2 -->
+                <div class="team-member fade-in">
+                    <div class="member-photo">
+                        <img src="Images/teammate2.jpg" alt="Sam Chen - Cryptography Expert">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#" aria-label="Sam's GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Sam's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="Sam's Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
                     </div>
+                    <h3 class="member-name">Sam Chen</h3>
+                    <p class="member-role">Cryptography & Reverse Engineering</p>
+                    <p class="member-bio">Focuses on cryptographic algorithms, reverse engineering, and binary exploitation. CTF enthusiast with multiple wins.</p>
+                </div>
+                
+                <!-- Teammate 3 -->
+                <div class="team-member fade-in">
+                    <div class="member-photo">
+                        <img src="Images/teammate3.jpg" alt="Jordan Lee - Web Security">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#" aria-label="Jordan's GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Jordan's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="Jordan's Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="member-name">Jordan Lee</h3>
+                    <p class="member-role">Web Security & Forensics</p>
+                    <p class="member-bio">Expert in web application security, digital forensics, and incident response. Loves solving complex web challenges.</p>
+                </div>
+                
+                <!-- Teammate 4 -->
+                <div class="team-member fade-in">
+                    <div class="member-photo">
+                        <img src="Images/teammate4.jpg" alt="Taylor Reyes - OSINT & Social Engineering">
+                        <div class="member-overlay">
+                            <div class="member-social">
+                                <a href="#" aria-label="Taylor's GitHub"><i class="fab fa-github"></i></a>
+                                <a href="#" aria-label="Taylor's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="Taylor's Twitter"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="member-name">Taylor Reyes</h3>
+                    <p class="member-role">OSINT & Social Engineering</p>
+                    <p class="member-bio">Specializes in open-source intelligence, social engineering, and physical security assessments. Keen eye for details.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
+    <!-- CTF Section -->
+    <section id="ctf" class="section ctf">
         <div class="container">
-            <h2 class="section-title">Projects & CTF Experience</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Forensic Investigation: Imanuel Leet-Hacker Case</h3>
+            <h2 class="section-title slide-up">Curtin Malaysia CTF 2023</h2>
+            <div class="ctf-content">
+                <div class="ctf-info fade-in">
+                    <div class="ctf-highlight">
+                        <h3>Capture The Flag Competition</h3>
+                        <p>We are excited to participate in the Curtin Malaysia CTF competition, an event that brings together the brightest cybersecurity minds to solve challenges across various domains.</p>
                     </div>
-                    <div class="project-body">
-                        <p>Led a digital forensic investigation into website defacement & account takeover, reverse-engineering attacker TTPs and identifying exploitation methods using Autopsy and CLI tools.</p>
-                        <div class="project-tags">
-                            <span class="tag">Digital Forensics</span>
-                            <span class="tag">Autopsy</span>
-                            <span class="tag">Investigation</span>
+                    
+                    <div class="ctf-details">
+                        <div class="detail">
+                            <i class="fas fa-flag"></i>
+                            <h4>Challenge Categories</h4>
+                            <p>Web Exploitation, Cryptography, Reverse Engineering, Forensics, OSINT, and Binary Exploitation.</p>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h4>Event Date</h4>
+                            <p>December 6-7, 2025</p>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-trophy"></i>
+                            <h4>Our Goals</h4>
+                            <p>Rank in the top 10 teams, network with industry professionals, and apply our skills in a competitive environment.</p>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-users"></i>
+                            <h4>Team Preparation</h4>
+                            <p>Weekly training sessions, mock CTFs, and research on emerging security threats and techniques.</p>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Wazuh Attack Simulation & Detection Testing Lab</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>Built a containerized attack simulation lab (Docker, WSL, Wazuh) to safely generate and analyze malicious activity like brute-force and file integrity attacks.</p>
-                        <div class="project-tags">
-                            <span class="tag">Wazuh</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">SIEM</span>
+                
+                <div class="ctf-visual slide-up">
+                    <div class="ctf-card">
+                        <div class="ctf-card-header">
+                            <h3>CTF Countdown</h3>
+                        </div>
+                        <div class="ctf-card-body">
+                            <div class="countdown">
+                                <div class="countdown-item">
+                                    <span class="countdown-number" id="days">00</span>
+                                    <span class="countdown-label">Days</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-number" id="hours">00</span>
+                                    <span class="countdown-label">Hours</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-number" id="minutes">00</span>
+                                    <span class="countdown-label">Minutes</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-number" id="seconds">00</span>
+                                    <span class="countdown-label">Seconds</span>
+                                </div>
+                            </div>
+                            <p class="countdown-note">Until the competition begins</p>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Capture The Flag (CTF) Participation</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>Actively participate in solo and team-based CTF competitions including events organized by INTI, Curtin University, and online platforms.</p>
-                        <div class="project-tags">
-                            <span class="tag">CTF</span>
-                            <span class="tag">Web Exploitation</span>
-                            <span class="tag">Forensics</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Mathology In-house Management System</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>Engineered a web-based system to automate class scheduling, attendance, and payment management using HTML, CSS, JavaScript, PHP & SQL.</p>
-                        <div class="project-tags">
-                            <span class="tag">PHP</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Full-Stack</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section section-dark">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Security Tools & Platforms</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Kali Linux</span>
-                        <span class="skill-item">Burp Suite</span>
-                        <span class="skill-item">Metasploit</span>
-                        <span class="skill-item">Nmap</span>
-                        <span class="skill-item">Wireshark</span>
-                        <span class="skill-item">Autopsy</span>
-                        <span class="skill-item">OWASP ZAP</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Defensive Systems</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">SIEM (QRadar, Wazuh)</span>
-                        <span class="skill-item">Firewalls (Cisco ASA)</span>
-                        <span class="skill-item">DDoS Mitigation</span>
-                        <span class="skill-item">Incident Response</span>
-                        <span class="skill-item">Log Analysis</span>
-                        <span class="skill-item">Active Directory</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Programming & Development</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">C++</span>
-                        <span class="skill-item">PHP</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">HTML/CSS</span>
-                        <span class="skill-item">SQL</span>
-                        <span class="skill-item">Flask</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Networking & Infrastructure</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">CCNA Certified</span>
-                        <span class="skill-item">Routing & Switching</span>
-                        <span class="skill-item">Cisco Switches</span>
-                        <span class="skill-item">VPNs</span>
-                        <span class="skill-item">AWS EC2</span>
-                        <span class="skill-item">Docker</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="cert-grid">
-                <div class="cert-item">Stellar Cyber SOC Analyst Associate (Nov 2025)</div>
-                <div class="cert-item">Microsoft Security Essentials Professional Certificate (Oct 2025)</div>
-                <div class="cert-item">Fortinet Certified Associate in Cybersecurity (Apr 2025)</div>
-                <div class="cert-item">Fortinet FortiGate 7.4 Operator (Apr 2025)</div>
-                <div class="cert-item">Cisco Network Security (Jan 2025)</div>
-                <div class="cert-item">CCNA: Enterprise Networking, Security, and Automation (Aug 2024)</div>
-                <div class="cert-item">CCNAv7: Switching, Routing, and Wireless Essentials (Aug 2024)</div>
-                <div class="cert-item">CCNA: Introduction to Networks (Jan 2024)</div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section section-dark">
+    <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title slide-up">Get In Touch</h2>
+            <p class="section-subtitle fade-in">Interested in collaborating or learning more about our team?</p>
+            
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:darrshan2003@gmail.com">darrshan2003@gmail.com</a>
-                        </div>
+                <div class="contact-info fade-in">
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>contact@evolvedhackers.club</p>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <h4>Phone</h4>
-                            <a href="tel:+60137123184">+60 13-712 3184</a>
-                        </div>
+                    <div class="contact-method">
+                        <i class="fas fa-hashtag"></i>
+                        <h3>CTF Team</h3>
+                        <p>EvolvedHackersClub (on CTF platforms)</p>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Bandar Putera, Klang, Selangor</p>
-                        </div>
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Based In</h3>
+                        <p>Cyberspace & Curtin Malaysia</p>
                     </div>
+                    <div class="contact-method">
+                        <i class="fas fa-users"></i>
+                        <h3>Join Us</h3>
+                        <p>Recruitment opens after CTF season</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form slide-up">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Darrshan Erettai Muniandy. All rights reserved.</p>
-            <p class="footer-tagline">Securing the digital world, one threat at a time.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Logo/team-logo.png" alt="Evolved Hackers Club Logo">
+                    <span>Evolved Hackers Club</span>
+                </div>
+                <p class="footer-tagline">Securing the digital frontier, one challenge at a time.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p class="footer-ctf">Participating in Curtin Malaysia CTF 2023</p>
+                <p class="footer-copyright">© 2023 Evolved Hackers Club. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

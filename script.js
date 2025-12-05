@@ -1,405 +1,238 @@
-// Add this announcement slideshow functionality to your existing script.js
+/**
+ * Evolved Hackers Club Website
+ * Main JavaScript file for interactivity and animations
+ */
 
-// Announcement Slideshow
-class AnnouncementSlideshow {
-    constructor() {
-        this.slides = document.querySelectorAll('.announcement-slide');
-        this.indicators = document.querySelectorAll('.indicator');
-        this.prevBtn = document.querySelector('.slide-nav.prev');
-        this.nextBtn = document.querySelector('.slide-nav.next');
-        this.progressBar = document.querySelector('.progress-bar');
-        this.currentSlide = 0;
-        this.slideInterval = null;
-        this.slideDuration = 5000; // 5 seconds per slide
-        this.isTransitioning = false;
-        
-        this.init();
-    }
-    
-    init() {
-        // Start slideshow
-        this.startSlideshow();
-        
-        // Add click event listeners to indicators
-        this.indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                this.goToSlide(index);
-            });
-        });
-        
-        // Add navigation buttons
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => {
-                this.prevSlide();
-            });
-        }
-        
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => {
-                this.nextSlide();
-            });
-        }
-        
-        // Pause on hover
-        const container = document.querySelector('.announcement-container');
-        if (container) {
-            container.addEventListener('mouseenter', () => {
-                this.pauseSlideshow();
-            });
-            
-            container.addEventListener('mouseleave', () => {
-                this.startSlideshow();
-            });
-        }
-        
-        // Touch swipe support
-        this.addTouchSupport();
-    }
-    
-    startSlideshow() {
-        if (this.slideInterval) {
-            clearInterval(this.slideInterval);
-        }
-        
-        this.slideInterval = setInterval(() => {
-            this.nextSlide();
-        }, this.slideDuration);
-        
-        // Restart progress bar animation
-        this.restartProgressBar();
-    }
-    
-    pauseSlideshow() {
-        if (this.slideInterval) {
-            clearInterval(this.slideInterval);
-            this.slideInterval = null;
-        }
-        
-        // Pause progress bar animation
-        this.pauseProgressBar();
-    }
-    
-    goToSlide(index) {
-        if (this.isTransitioning || index === this.currentSlide) return;
-        
-        this.isTransitioning = true;
-        
-        // Hide current slide
-        this.slides[this.currentSlide].classList.remove('active');
-        this.indicators[this.currentSlide].classList.remove('active');
-        
-        // Show new slide
-        this.currentSlide = index;
-        this.slides[this.currentSlide].classList.add('active');
-        this.indicators[this.currentSlide].classList.add('active');
-        
-        // Reset progress bar
-        this.restartProgressBar();
-        
-        // Restart slideshow
-        this.startSlideshow();
-        
-        // Allow next transition after animation
-        setTimeout(() => {
-            this.isTransitioning = false;
-        }, 800);
-    }
-    
-    nextSlide() {
-        const nextIndex = (this.currentSlide + 1) % this.slides.length;
-        this.goToSlide(nextIndex);
-    }
-    
-    prevSlide() {
-        const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-        this.goToSlide(prevIndex);
-    }
-    
-    restartProgressBar() {
-        if (this.progressBar) {
-            this.progressBar.style.transition = 'none';
-            this.progressBar.style.width = '0%';
-            
-            // Force reflow
-            this.progressBar.offsetHeight;
-            
-            this.progressBar.style.transition = `width ${this.slideDuration}ms linear`;
-            this.progressBar.style.width = '100%';
-        }
-    }
-    
-    pauseProgressBar() {
-        if (this.progressBar) {
-            const computedStyle = window.getComputedStyle(this.progressBar);
-            const currentWidth = computedStyle.getPropertyValue('width');
-            this.progressBar.style.transition = 'none';
-            this.progressBar.style.width = currentWidth;
-        }
-    }
-    
-    addTouchSupport() {
-        const container = document.querySelector('.announcement-slides');
-        if (!container) return;
-        
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        container.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        container.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            this.handleSwipe();
-        }, { passive: true });
-        
-        this.handleSwipe = () => {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    // Swipe left - next slide
-                    this.nextSlide();
-                } else {
-                    // Swipe right - previous slide
-                    this.prevSlide();
-                }
-            }
-        };
-    }
-}
+// DOM Elements
+const navToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+const contactForm = document.getElementById('contactForm');
+const scrollIndicator = document.querySelector('.scroll-indicator');
 
-// Initialize slideshow when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize announcement slideshow
-    new AnnouncementSlideshow();
-    
-    // Rest of your existing JavaScript code...
-    
-    // Mobile Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        
-        // Animate hamburger
-        hamburger.classList.toggle('active');
-    });
+// Countdown Elements
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minutesEl = document.getElementById('minutes');
+const secondsEl = document.getElementById('seconds');
+
+// CTF Event Date (November 15, 2023)
+const ctfDate = new Date('Nov 15, 2023 09:00:00').getTime();
+
+/**
+ * Initialize all event listeners and functions
+ */
+function init() {
+    // Mobile navigation toggle
+    navToggle.addEventListener('click', toggleMobileMenu);
     
     // Close mobile menu when clicking on a link
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
+        link.addEventListener('click', closeMobileMenu);
     });
     
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    // Form submission handler
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmit);
+    }
     
-    // Navbar Scroll Effect
-    const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
+    // Initialize countdown timer
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
     
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        lastScroll = currentScroll;
-    });
+    // Initialize scroll animations
+    initScrollAnimations();
     
-    // Enhanced Intersection Observer for Smooth Scroll Animations
+    // Hide scroll indicator after user starts scrolling
+    window.addEventListener('scroll', handleScroll);
+    
+    // Set current year in footer (if needed)
+    setCurrentYear();
+    
+    console.log('Evolved Hackers Club website initialized');
+}
+
+/**
+ * Toggle mobile navigation menu
+ */
+function toggleMobileMenu() {
+    navMenu.classList.toggle('active');
+    navToggle.classList.toggle('active');
+    
+    // Animate hamburger to X
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.classList.toggle('active');
+}
+
+/**
+ * Close mobile navigation menu
+ */
+function closeMobileMenu() {
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+    document.querySelector('.hamburger').classList.remove('active');
+}
+
+/**
+ * Handle form submission
+ * @param {Event} e - Form submit event
+ */
+function handleFormSubmit(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    
+    // In a real implementation, you would send this data to a server
+    // For this demo, we'll just show a success message
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    
+    submitBtn.textContent = 'Message Sent!';
+    submitBtn.disabled = true;
+    submitBtn.classList.add('success');
+    
+    // Reset form
+    contactForm.reset();
+    
+    // Reset button after 3 seconds
+    setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('success');
+    }, 3000);
+    
+    console.log('Form submitted:', { name, email, message });
+}
+
+/**
+ * Update the CTF countdown timer
+ */
+function updateCountdown() {
+    const now = new Date().getTime();
+    const timeRemaining = ctfDate - now;
+    
+    // If the event has passed
+    if (timeRemaining < 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        return;
+    }
+    
+    // Calculate days, hours, minutes, seconds
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    
+    // Update display
+    daysEl.textContent = days.toString().padStart(2, '0');
+    hoursEl.textContent = hours.toString().padStart(2, '0');
+    minutesEl.textContent = minutes.toString().padStart(2, '0');
+    secondsEl.textContent = seconds.toString().padStart(2, '0');
+}
+
+/**
+ * Initialize scroll-based animations
+ */
+function initScrollAnimations() {
+    // Create Intersection Observer for fade-in animations
     const observerOptions = {
-        threshold: 0.15,
+        threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add animation class when element enters viewport
-                entry.target.classList.add('animate-in');
+                entry.target.classList.add('visible');
                 
-                // Optional: Stop observing after animation (remove if you want repeat animations)
+                // Stop observing after animation triggers
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
-    // Observe all animated elements with staggered delays
-    const animatedElements = document.querySelectorAll(
-        '.project-card, .skill-category, .timeline-item, .cert-item, .contact-item, .about-text, .about-details'
-    );
-    
-    animatedElements.forEach((el, index) => {
-        // Add initial hidden state
-        el.classList.add('fade-in-element');
-        
-        // Add staggered delay for elements in the same section
-        const delay = (index % 4) * 0.1; // Stagger by 0.1s for every 4 items
-        el.style.transitionDelay = `${delay}s`;
-        
+    // Observe all elements with animation classes
+    document.querySelectorAll('.fade-in, .slide-up').forEach(el => {
         observer.observe(el);
     });
+}
+
+/**
+ * Handle scroll events
+ */
+function handleScroll() {
+    // Hide scroll indicator after user scrolls down 100px
+    if (window.scrollY > 100) {
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.pointerEvents = 'none';
+    } else {
+        scrollIndicator.style.opacity = '1';
+        scrollIndicator.style.pointerEvents = 'auto';
+    }
     
-    // Separate observer for section titles
-    const titleObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('title-animate-in');
-                titleObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    document.querySelectorAll('.section-title').forEach(title => {
-        title.classList.add('fade-in-title');
-        titleObserver.observe(title);
-    });
-    
-    // Active Navigation Link Highlight
+    // Add active class to nav links based on scroll position
+    highlightNavOnScroll();
+}
+
+/**
+ * Highlight navigation links based on scroll position
+ */
+function highlightNavOnScroll() {
     const sections = document.querySelectorAll('section[id]');
+    const scrollPosition = window.scrollY + 100;
     
-    function highlightNavigation() {
-        const scrollY = window.pageYOffset;
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
         
-        sections.forEach(section => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 100;
-            const sectionId = section.getAttribute('id');
-            const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-            
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                if (navLink) {
-                    navLink.classList.add('active');
-                }
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', highlightNavigation);
-    
-    // Typing Effect for Hero Section (Optional Enhancement)
-    const subtitle = document.querySelector('.subtitle');
-    if (subtitle) {
-        const originalText = subtitle.textContent;
-        subtitle.textContent = '';
-        let charIndex = 0;
-        
-        function typeWriter() {
-            if (charIndex < originalText.length) {
-                subtitle.textContent += originalText.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-        
-        // Start typing after a short delay
-        setTimeout(typeWriter, 500);
-    }
-    
-    // Parallax Effect for Cyber Grid
-    window.addEventListener('scroll', () => {
-        const cyberGrid = document.querySelector('.cyber-grid');
-        const scrolled = window.pageYOffset;
-        cyberGrid.style.transform = `translateY(${scrolled * 0.5}px)`;
-    });
-    
-    // Project Cards Hover Effect Enhancement
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-        });
-    });
-    
-    // Skill Items Interactive Effect
-    const skillItems = document.querySelectorAll('.skill-item');
-    skillItems.forEach((item, index) => {
-        item.style.animationDelay = `${index * 0.05}s`;
-        
-        item.addEventListener('click', () => {
-            item.style.animation = 'none';
-            setTimeout(() => {
-                item.style.animation = '';
-            }, 10);
-        });
-    });
-    
-    // Add glitch effect to main title on hover
-    const glitchTitle = document.querySelector('.glitch');
-    if (glitchTitle) {
-        glitchTitle.addEventListener('mouseenter', () => {
-            glitchTitle.style.animation = 'glitchPulse 0.3s infinite';
-        });
-        
-        glitchTitle.addEventListener('mouseleave', () => {
-            glitchTitle.style.animation = 'glitchPulse 3s infinite';
-        });
-    }
-    
-    // Console Easter Egg
-    console.log('%c🔒 Cybersecurity Portfolio', 'color: #8b5cf6; font-size: 20px; font-weight: bold;');
-    console.log('%c👨‍💻 Darrshan Erettai Muniandy', 'color: #a78bfa; font-size: 14px;');
-    console.log('%cInterested in the code? Feel free to reach out!', 'color: #94a3b8; font-size: 12px;');
-    
-    // Add loading animation
-    window.addEventListener('load', () => {
-        document.body.style.opacity = '0';
-        document.body.style.transition = 'opacity 0.5s ease';
-        
-        setTimeout(() => {
-            document.body.style.opacity = '1';
-        }, 100);
-    });
-    
-    // Detect scroll direction for additional effects
-    let scrollDirection = 'down';
-    let lastScrollTop = 0;
-    
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > lastScrollTop) {
-            scrollDirection = 'down';
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.add('active');
         } else {
-            scrollDirection = 'up';
+            document.querySelector(`.nav-link[href="#${sectionId}"]`)?.classList.remove('active');
         }
+    });
+}
+
+/**
+ * Set current year in footer (if needed)
+ */
+function setCurrentYear() {
+    const yearElement = document.querySelector('.footer-copyright');
+    if (yearElement) {
+        const currentYear = new Date().getFullYear();
+        yearElement.textContent = yearElement.textContent.replace('2023', currentYear);
+    }
+}
+
+/**
+ * Add some interactive effects to team member cards
+ */
+function enhanceTeamCards() {
+    const teamMembers = document.querySelectorAll('.team-member');
+    
+    teamMembers.forEach(member => {
+        member.addEventListener('mouseenter', () => {
+            // Add a subtle glow effect
+            member.style.boxShadow = '0 20px 40px -20px rgba(100, 255, 218, 0.3)';
+        });
         
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    }, false);
-});
+        member.addEventListener('mouseleave', () => {
+            // Restore original shadow
+            member.style.boxShadow = '';
+        });
+    });
+}
+
+// Initialize the website when DOM is loaded
+document.addEventListener('DOMContentLoaded', init);
+
+// Also initialize team card enhancements
+document.addEventListener('DOMContentLoaded', enhanceTeamCards);
