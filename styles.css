@@ -982,6 +982,96 @@ body::before {
 }
 
 /* ===================================
+   Logo Marquee Section
+   =================================== */
+.logo-marquee {
+    padding: 60px 0;
+    background: #0f0f0f;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    width: fit-content;
+    animation: marqueeScroll 30s linear infinite;
+    will-change: transform;
+}
+
+/* Pause animation on hover */
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Logo Chip Container */
+.marquee-logo {
+    flex-shrink: 0;
+    width: 140px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+
+    /* Chip Styling */
+    background: #e8e8e8;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.marquee-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    /* Magic: Blend white backgrounds into chip */
+    mix-blend-mode: multiply;
+
+    /* Default state: slightly dimmed */
+    opacity: 0.85;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effect - Premium Chip Pop */
+.marquee-logo:hover {
+    background: #ffffff;
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.7),
+        0 0 50px rgba(0, 243, 255, 0.4),
+        0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.marquee-logo:hover img {
+    opacity: 1;
+}
+
+
+/* Infinite Scroll Animation */
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ===================================
    Contact Section
    =================================== */
 .contact {
@@ -1088,6 +1178,17 @@ body::before {
 
     .skill-tag:hover {
         animation: none;
+    }
+
+    /* Logo Marquee Responsive */
+    .marquee-logo {
+        width: 100px;
+        height: 50px;
+        padding: 8px;
+    }
+
+    .marquee-track {
+        gap: 40px;
     }
 }
 
