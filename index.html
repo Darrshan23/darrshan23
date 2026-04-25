@@ -3,355 +3,501 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Darrshan Erettai Muniandy | Cybersecurity Portfolio</title>
+    <title>Darrshan Erettai Muniandy | Cybersecurity Analyst</title>
+    <meta name="description" content="Cybersecurity Analyst with operational experience in SIEM monitoring, DDoS mitigation, and incident triage. EC-Council CCT | ISC2 CC | Fortinet FCA." />
     <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   </head>
   <body>
+
+    <!-- ─── NAVIGATION ─── -->
     <nav class="navbar" id="navbar">
-      <div class="logo">DEM.</div>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-item">About</a></li>
-        <li><a href="#experience" class="nav-item">Experience</a></li>
-        <li><a href="#skills" class="nav-item">Skills</a></li>
-        <li><a href="#projects" class="nav-item">Projects</a></li>
-        <li><a href="#education" class="nav-item">Education</a></li>
+      <a href="#about" class="logo" id="logo-link">
+        <span class="logo-bracket">&lt;</span>DEM<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about"      class="nav-item" data-index="01">About</a></li>
+        <li><a href="#experience" class="nav-item" data-index="02">Experience</a></li>
+        <li><a href="#skills"     class="nav-item" data-index="03">Skills</a></li>
+        <li><a href="#projects"   class="nav-item" data-index="04">Projects</a></li>
+        <li><a href="#education"  class="nav-item" data-index="05">Education</a></li>
+        <li><a href="Darrshan-Resume - 2722026.pdf" download class="nav-cta">Resume</a></li>
       </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
 
-    <header id="about" class="hero section fade-in">
-      <div class="hero-content">
-        <h1>Darrshan Erettai Muniandy</h1>
-        <h2>Cybersecurity Analyst</h2>
-        <p class="summary">
-          Cybersecurity Analyst with operational experience in SIEM monitoring,
-          DDoS mitigation, and incident triage within a high-availability
-          environment. Proven ability to manage offense queues, validate
-          security alerts, and adhere to strict Service Level Agreements (SLAs)
-          for timely customer notifications. Combines a Bachelor's in Computer
-          Science with a strong technical foundation in network security
-          protocols (CCNA curriculum) and full-stack development to support
-          critical infrastructure and defensive operations.
-        </p>
-        <div class="contact-info">
-          <span class="badge">📍 Bandar Putera, Klang, Selangor</span>
-          <span class="badge">📞 +60 13-976 0509</span>
-          <span class="badge">✉️ darrshan2003@gmail.com</span>
+    <!-- ─── HERO ─── -->
+    <header id="about" class="hero">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-greeting reveal-up">Hi, I'm</p>
+          <h1 class="hero-name reveal-up delay-1">Darrshan<br><span class="name-accent">Erettai Muniandy</span></h1>
+          <div class="hero-role reveal-up delay-2">
+            <span class="role-tag">&#x2022;</span>
+            <span class="typed-text" id="typed-text"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+          <p class="hero-summary reveal-up delay-3">
+            Cybersecurity Analyst with operational experience in <span class="highlight">SIEM monitoring</span>,
+            <span class="highlight">DDoS mitigation</span>, and <span class="highlight">incident triage</span>
+            within high-availability environments. Backed by a Bachelor's in Computer Science and
+            industry certifications from EC-Council, ISC2, and Fortinet.
+          </p>
+          <div class="hero-badges reveal-up delay-4">
+            <span class="badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Klang, Selangor</span>
+            <span class="badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14h-.08v2.92z"/></svg>+60 13-976 0509</span>
+            <span class="badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><polyline points="22,6 12,13 2,6"/></svg>darrshan2003@gmail.com</span>
+          </div>
+          <div class="hero-actions reveal-up delay-5">
+            <a href="Darrshan-Resume - 2722026.pdf" download class="btn-primary">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Resume
+            </a>
+            <a href="#experience" class="btn-ghost">View My Work</a>
+          </div>
         </div>
-        <a href="Darrshan-Resume - 2722026.pdf" download class="btn-download"
-          >Download Resume</a
-        >
+        <div class="hero-image reveal-right">
+          <div class="img-frame">
+            <img src="Images/Darrshan.jpg" alt="Darrshan Erettai Muniandy" class="profile-img" />
+            <div class="img-ring img-ring-1"></div>
+            <div class="img-ring img-ring-2"></div>
+          </div>
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Available for opportunities</span>
+          </div>
+        </div>
       </div>
-      <div class="hero-image-container">
-        <img
-          src="Images/Darrshan.jpg"
-          alt="Darrshan Erettai Muniandy"
-          class="profile-img"
-        />
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </header>
 
     <main>
-      <section id="experience" class="section fade-in">
-        <h2 class="section-title">Work Experience</h2>
 
-        <div class="card experience-card">
-          <div class="card-header">
-            <img
-              src="Images/Accenture.jpg"
-              alt="Accenture Logo"
-              class="company-logo"
-            />
-            <div>
-              <h3>Accenture</h3>
-              <p class="subtitle">
-                Security Operations Centre Analyst | Present
-              </p>
-            </div>
-          </div>
+      <!-- ─── EXPERIENCE ─── -->
+      <section id="experience" class="section">
+        <div class="section-header reveal-up">
+          <span class="section-number">01</span>
+          <h2 class="section-title">Work Experience</h2>
         </div>
+        <div class="timeline">
 
-        <div class="card experience-card">
-          <div class="card-header">
-            <img
-              src="Images/Timedotcom.jpg"
-              alt="TimedotCom Logo"
-              class="company-logo"
-            />
-            <div>
-              <h3>TimedotCom</h3>
-              <p class="subtitle">
-                Cybersecurity Analyst, Intern | Aug 2025 - Nov 2025
-              </p>
+          <!-- Accenture -->
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="tcard-header">
+                <img src="Images/Accenture,jpg.png" alt="Accenture" class="company-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="logo-placeholder" style="display:none">AC</div>
+                <div class="tcard-meta">
+                  <h3>Security Operations Centre Analyst</h3>
+                  <p class="tcard-company">Accenture</p>
+                  <span class="tcard-date">Present</span>
+                </div>
+                <span class="tcard-badge current">Current</span>
+              </div>
             </div>
           </div>
-          <ul>
-            <li>
-              SIEM Monitoring & Incident Triage: Monitored SIEM alerts to detect
-              potential threats, creating tickets for all offenses and
-              escalating validated incidents to L2 analysts or customers for
-              verification.
-            </li>
-            <li>
-              DDoS Response & Communication: Managed DDoS incident protocols by
-              issuing timely notifications to customers via email or phone based
-              on attack duration (>=10 mins) and Service Level Agreements
-              (SLAs), ensuring every alert was documented in the ticketing
-              system.
-            </li>
-            <li>
-              Operational Support & Reporting: Assisted in the preparation of
-              monthly security reports and maintained accurate operational data
-              using Excel.
-            </li>
-            <li>
-              Platform Proficiency: Gained hands-on training in Stellar Cyber
-              Open XDR and PRE Security AI SOC to support offense management and
-              analysis.
-            </li>
-          </ul>
-        </div>
 
-        <div class="card experience-card">
-          <div class="card-header">
-            <div class="company-logo placeholder-logo">MD</div>
-            <div>
-              <h3>Mr Digital</h3>
-              <p class="subtitle">
-                Website Developer, Freelance | Dec 2023 - Aug 2025
-              </p>
+          <!-- Timedotcom -->
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="tcard-header">
+                <img src="Images/Timedotcom.jpg" alt="TimedotCom" class="company-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="logo-placeholder" style="display:none">TDC</div>
+                <div class="tcard-meta">
+                  <h3>Cybersecurity Analyst, Intern</h3>
+                  <p class="tcard-company">TimedotCom</p>
+                  <span class="tcard-date">Aug 2025 – Nov 2025</span>
+                </div>
+              </div>
+              <ul class="tcard-list">
+                <li><strong>SIEM Monitoring &amp; Incident Triage:</strong> Monitored SIEM alerts to detect potential threats, creating tickets for all offenses and escalating validated incidents to L2 analysts or customers for verification.</li>
+                <li><strong>DDoS Response &amp; Communication:</strong> Managed DDoS incident protocols by issuing timely notifications to customers via email/phone based on attack duration (&ge;10 mins) and SLAs.</li>
+                <li><strong>Operational Support:</strong> Assisted in monthly security reports and maintained accurate operational data using Excel.</li>
+                <li><strong>Platform Proficiency:</strong> Hands-on training in Stellar Cyber Open XDR and PRE Security AI SOC for offense management and analysis.</li>
+              </ul>
+              <div class="tcard-tags">
+                <span>IBM QRadar</span><span>Stellar Cyber XDR</span><span>SIEM</span><span>DDoS</span><span>Incident Response</span>
+              </div>
             </div>
           </div>
-          <ul>
-            <li>
-              Full-Stack Development: Developed custom, responsive websites from
-              concept to deployment, handling both front-end interfaces and
-              back-end functionality.
-            </li>
-            <li>
-              Client Management: Collaborated directly with clients to translate
-              their specific requirements into functional digital solutions.
-            </li>
-            <li>
-              Standardized onboarding processes by creating a structured Client
-              Discovery Questionnaire (CDQ) utilizing a dual-column table
-              format, and managed project formalities including the Master
-              Service Agreement (MSA) and Statement of Work (SOW).
-            </li>
-          </ul>
+
+          <!-- Mr Digital -->
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="tcard-header">
+                <div class="logo-placeholder">MD</div>
+                <div class="tcard-meta">
+                  <h3>Website Developer, Freelance</h3>
+                  <p class="tcard-company">Mr Digital</p>
+                  <span class="tcard-date">Dec 2023 – Aug 2025</span>
+                </div>
+              </div>
+              <ul class="tcard-list">
+                <li><strong>Full-Stack Development:</strong> Developed custom, responsive websites from concept to deployment — front-end interfaces and back-end functionality.</li>
+                <li><strong>Client Management:</strong> Collaborated directly with clients to translate requirements into functional digital solutions.</li>
+                <li><strong>Process Standardisation:</strong> Created a structured Client Discovery Questionnaire (CDQ) and managed the Master Service Agreement (MSA) and Statement of Work (SOW).</li>
+              </ul>
+              <div class="tcard-tags">
+                <span>HTML/CSS/JS</span><span>PHP</span><span>WordPress</span><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      <section id="skills" class="section fade-in">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-category card">
-            <h4>Security Tools & Platforms</h4>
-            <p>
-              IBM QRadar, Wazuh, Arbor DDoS, Stellar Cyber Open XDR, Cisco ASA
-              Firewalls, PRE Security AI SecOPS, Fortigate, Cacti, Autopsy,
-              Nmap, Kali Linux, Parrot OS
-            </p>
+      <!-- ─── SKILLS ─── -->
+      <section id="skills" class="section">
+        <div class="section-header reveal-up">
+          <span class="section-number">02</span>
+          <h2 class="section-title">Technical Skills</h2>
+        </div>
+        <div class="bento-grid reveal-up delay-1">
+
+          <div class="bento-card bento-wide bento-glow">
+            <div class="bento-icon">🛡️</div>
+            <h4>Security Tools &amp; Platforms</h4>
+            <div class="skill-pills">
+              <span>IBM QRadar</span><span>Wazuh</span><span>Arbor DDoS</span>
+              <span>Stellar Cyber XDR</span><span>Cisco ASA</span><span>PRE Security AI</span>
+              <span>Fortigate</span><span>Cacti</span><span>Autopsy</span>
+              <span>Nmap</span><span>Kali Linux</span><span>Parrot OS</span>
+            </div>
           </div>
-          <div class="skill-category card">
-            <h4>Security Operations & Analysis</h4>
-            <p>
-              SIEM, Extended Detection & Response (XDR), Incident Response, Log
-              Analysis, Digital Forensics & Evidence Handling, Mitre ATT&CK
-              TTPs, Offense Management & Escalations, Email Quarantine Analysis,
-              Phishing, Brute Force
-            </p>
+
+          <div class="bento-card">
+            <div class="bento-icon">🔍</div>
+            <h4>Security Operations</h4>
+            <div class="skill-pills">
+              <span>SIEM</span><span>XDR</span><span>Incident Response</span>
+              <span>Log Analysis</span><span>Digital Forensics</span>
+              <span>MITRE ATT&amp;CK</span><span>Offense Mgmt</span>
+              <span>Phishing Analysis</span>
+            </div>
           </div>
-          <div class="skill-category card">
-            <h4>Networking & Infrastructure</h4>
-            <p>
-              Routing & Switching, Cisco Switches, Network Administration, IPSec
-              VPN, Site-to-site VPN, NAT & PAT, AWS EC2, Windows Server, Active
-              Directory (AD), Docker
-            </p>
+
+          <div class="bento-card">
+            <div class="bento-icon">🌐</div>
+            <h4>Networking &amp; Infra</h4>
+            <div class="skill-pills">
+              <span>Routing &amp; Switching</span><span>Cisco</span>
+              <span>IPSec VPN</span><span>NAT/PAT</span>
+              <span>AWS EC2</span><span>Windows Server</span>
+              <span>Active Directory</span><span>Docker</span>
+            </div>
           </div>
-          <div class="skill-category card">
-            <h4>Programming & Development</h4>
-            <p>
-              Python, C++, C#, Ruby, HTML, CSS, JavaScript, SQL, PHP, Flask,
-              Data Structures & Algorithms, Object-Oriented Programming (OOP)
-            </p>
+
+          <div class="bento-card">
+            <div class="bento-icon">💻</div>
+            <h4>Programming &amp; Dev</h4>
+            <div class="skill-pills">
+              <span>Python</span><span>Go</span><span>C++</span><span>C#</span>
+              <span>Ruby</span><span>JavaScript</span><span>SQL</span>
+              <span>PHP</span><span>Flask</span><span>HTML/CSS</span>
+            </div>
           </div>
-          <div class="skill-category card">
-            <h4>Databases & Platforms</h4>
-            <p>PostgreSQL, MySQL, Supabase, Thingsboard, WordPress, Wix</p>
+
+          <div class="bento-card bento-tall">
+            <div class="bento-icon">🗄️</div>
+            <h4>Databases &amp; Platforms</h4>
+            <div class="skill-pills">
+              <span>PostgreSQL</span><span>MySQL</span><span>Supabase</span>
+              <span>Thingsboard</span><span>WordPress</span><span>Wix</span>
+            </div>
+            <div class="bento-separator"></div>
+            <div class="bento-icon">📊</div>
+            <h4>Productivity &amp; Soft Skills</h4>
+            <div class="skill-pills">
+              <span>Excel</span><span>Data Visualisation</span>
+              <span>Generative AI</span><span>Report Writing</span>
+              <span>Social Engineering</span>
+            </div>
           </div>
-          <div class="skill-category card">
-            <h4>Productivity & Professional</h4>
-            <p>
-              Microsoft Word, Excel, PowerPoint, Access, Data Visualization,
-              Generative AI, Ticketing System, Report Writing, Social
-              Engineering, Communication, Teamwork
-            </p>
-          </div>
+
         </div>
       </section>
 
-      <section id="projects" class="section fade-in">
-        <h2 class="section-title">Projects</h2>
+      <!-- ─── PROJECTS ─── -->
+      <section id="projects" class="section">
+        <div class="section-header reveal-up">
+          <span class="section-number">03</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
         <div class="projects-grid">
-          <div class="card">
-            <h3>Web Exploitation & Pen Testing Lab</h3>
-            <p class="subtitle">Self-Directed | Jan 2026 - Present</p>
-            <ul>
-              <li>
-                Lab Configuration: Configured a virtualized testing environment
-                using Kali Linux to simulate real-world web application
-                vulnerabilities.
-              </li>
-              <li>
-                Attack Simulation: Utilizing WebSploit and other penetration
-                testing tools to execute Man-in-the-Middle (MITM) attacks,
-                directory scanning, and credential harvesting in a controlled
-                environment.
-              </li>
-              <li>
-                Defensive Analysis: Analyzing the attack traffic and logs
-                generated during simulations to identify detection patterns and
-                improve threat hunting capabilities.
-              </li>
+
+          <div class="project-card featured reveal-up delay-1">
+            <div class="project-glow"></div>
+            <div class="project-number">01</div>
+            <div class="project-header">
+              <h3>Go-HIDS: Real-Time Host Intrusion Detection</h3>
+              <span class="project-date">Jan 2026</span>
+            </div>
+            <p class="project-desc">A production-grade security agent built in Go, leveraging Goroutines for concurrent, non-blocking log analysis.</p>
+            <ul class="project-bullets">
+              <li>Regex-based detection engine identifying IOCs including SSH Brute Force (MITRE T1110) and privilege escalation patterns.</li>
+              <li>Automated alerting pipeline that parses raw logs into structured JSON and triggers instant webhook notifications for analysts.</li>
             </ul>
+            <div class="project-tags">
+              <span>Go</span><span>Goroutines</span><span>Regex</span><span>MITRE ATT&amp;CK</span><span>Webhook</span>
+            </div>
           </div>
 
-          <div class="card">
-            <h3>Go-HIDS: Real-Time Host Intrusion Detection</h3>
-            <p class="subtitle">Jan 2026</p>
-            <ul>
-              <li>
-                Developed a real-time security agent in Go, utilizing Goroutines
-                for concurrent log processing without blocking system resources.
-              </li>
-              <li>
-                Engineered a Regex-based detection engine to identify Indicators
-                of Compromise (IOCs) like SSH Brute Force (MITRE T1110) and
-                privilege escalation.
-              </li>
-              <li>
-                Built an automated alerting pipeline that parses raw logs into
-                structured JSON and triggers instant webhook notifications for
-                analysts.
-              </li>
+          <div class="project-card reveal-up delay-2">
+            <div class="project-number">02</div>
+            <div class="project-header">
+              <h3>Web Exploitation &amp; Pen Testing Lab</h3>
+              <span class="project-date">Jan 2026 – Present</span>
+            </div>
+            <p class="project-desc">Virtualized testing environment simulating real-world web application vulnerabilities using Kali Linux.</p>
+            <ul class="project-bullets">
+              <li>Attack simulations: MITM attacks, directory scanning, and credential harvesting with WebSploit.</li>
+              <li>Defensive analysis of generated attack traffic to identify detection patterns and improve threat hunting.</li>
             </ul>
+            <div class="project-tags">
+              <span>Kali Linux</span><span>WebSploit</span><span>MITM</span><span>Pen Testing</span>
+            </div>
           </div>
 
-          <div class="card">
-            <h3>Personal Mini SIEM Ecosystem</h3>
-            <p class="subtitle">Self-Directed Hands-On Lab</p>
-            <ul>
-              <li>
-                Architected and built a localized "mini" Security Information
-                and Event Management (SIEM) system to actively ingest, parse,
-                and monitor operational telemetry.
-              </li>
-              <li>
-                Designed the environment to practice continuous monitoring,
-                fine-tune alert thresholds, and advance practical detection
-                engineering skills.
-              </li>
+          <div class="project-card reveal-up delay-3">
+            <div class="project-number">03</div>
+            <div class="project-header">
+              <h3>Personal Mini SIEM Ecosystem</h3>
+              <span class="project-date">Self-Directed Lab</span>
+            </div>
+            <p class="project-desc">Localized SIEM system built to actively ingest, parse, and monitor operational telemetry end-to-end.</p>
+            <ul class="project-bullets">
+              <li>Continuous monitoring with fine-tuned alert thresholds for advanced detection engineering.</li>
+              <li>Practice ground for real-world SOC workflows and log correlation techniques.</li>
             </ul>
+            <div class="project-tags">
+              <span>Wazuh</span><span>Log Correlation</span><span>Detection Engineering</span>
+            </div>
           </div>
 
-          <div class="card">
-            <h3>IoT Obstacle Avoidance Car</h3>
-            <p class="subtitle">April 2025</p>
-            <ul>
-              <li>
-                Built an autonomous car capable of detecting and avoiding
-                obstacles in real time.
-              </li>
-              <li>
-                Programmed microcontrollers using Arduino and integrated
-                Raspberry Pi for processing.
-              </li>
-              <li>
-                Utilized Python for sensor data handling and motion control.
-              </li>
-              <li>
-                Applied IoT concepts and hardware-software integration for
-                practical robotics.
-              </li>
+          <div class="project-card reveal-up delay-4">
+            <div class="project-number">04</div>
+            <div class="project-header">
+              <h3>IoT Obstacle Avoidance Car</h3>
+              <span class="project-date">April 2025</span>
+            </div>
+            <p class="project-desc">Autonomous embedded system capable of detecting and avoiding obstacles in real time.</p>
+            <ul class="project-bullets">
+              <li>Microcontrollers programmed using Arduino, integrated with Raspberry Pi for processing.</li>
+              <li>Python for sensor data handling and motion control with IoT hardware-software integration.</li>
             </ul>
+            <div class="project-tags">
+              <span>Python</span><span>Arduino</span><span>Raspberry Pi</span><span>IoT</span>
+            </div>
           </div>
+
         </div>
       </section>
 
-      <section id="education" class="section fade-in">
-        <h2 class="section-title">Education & Certifications</h2>
-        <div class="education-grid">
-          <div class="card">
-            <h3>Swinburne University of Technology, Australia</h3>
-            <p class="subtitle">
-              Bachelor of Computer Science major in Cybersecurity
-            </p>
-            <p>Feb 2023 - Dec 2025 | Subang / Australia</p>
-            <span class="highlight-text">CGPA 3.5 MY / 2.75 AUS</span>
+      <!-- ─── EDUCATION ─── -->
+      <section id="education" class="section">
+        <div class="section-header reveal-up">
+          <span class="section-number">04</span>
+          <h2 class="section-title">Education &amp; Certifications</h2>
+        </div>
+
+        <div class="education-cards reveal-up delay-1">
+          <div class="edu-card">
+            <div class="edu-icon">🎓</div>
+            <div class="edu-body">
+              <h3>Swinburne University of Technology</h3>
+              <p class="edu-degree">Bachelor of Computer Science — Major in Cybersecurity</p>
+              <p class="edu-period">Feb 2023 – Dec 2025 &ensp;|&ensp; Subang / Australia</p>
+              <div class="edu-badges">
+                <span class="edu-score">CGPA 3.5 MY</span>
+                <span class="edu-score">2.75 AUS</span>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <h3>INTI International College, Subang</h3>
-            <p class="subtitle">Foundation in IT</p>
-            <p>Jan 2022 - Dec 2022 | Subang</p>
-            <span class="highlight-text">CGPA 3.3</span>
+          <div class="edu-card">
+            <div class="edu-icon">📚</div>
+            <div class="edu-body">
+              <h3>INTI International College, Subang</h3>
+              <p class="edu-degree">Foundation in IT</p>
+              <p class="edu-period">Jan 2022 – Dec 2022 &ensp;|&ensp; Subang</p>
+              <div class="edu-badges">
+                <span class="edu-score">CGPA 3.3</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <h3 class="subsection-title">Certifications & Licenses</h3>
-        <ul class="cert-list">
-          <li class="card">
-            Certified Cybersecurity Technician, EC-Council, Jan 2026
-          </li>
-          <li class="card">Certified in Cybersecurity, ISC2, Dec 2025</li>
-          <li class="card">
-            Cybersecurity Awareness: Cybersecurity Terminology, LinkedIn, Nov
-            2025
-          </li>
-          <li class="card">
-            Stellar Cyber SOC Analyst Associate, Stellar Cyber, Nov 2025
-          </li>
-          <li class="card">
-            Microsoft Security Essentials Professional Certificate, Microsoft,
-            Oct 2025
-          </li>
-          <li class="card">
-            Microsoft Security Essentials: Concepts, Solutions, and AI-Powered
-            Protection, LinkedIn, Oct 2025
-          </li>
-          <li class="card">
-            SIEM: Event Management with Splunk Security, LinkedIn, Oct 2025
-          </li>
-          <li class="card">AWS x INTI Ideathon, AWS, May 2025</li>
-          <li class="card">
-            Fortinet FortiGate 7.4 Operator, Fortinet, Apr 2025
-          </li>
-          <li class="card">
-            Fortinet Certified Associate in Cybersecurity, Fortinet, Apr 2025
-          </li>
-          <li class="card">Network Security, Cisco, Jan 2025</li>
-          <li class="card">ISC2 Candidate, ISC2, Dec 2024</li>
-          <li class="card">Linux Unhatched, Cisco, Dec 2024</li>
-          <li class="card">
-            CCNA: Enterprise Networking, Security, and Automation, Cisco, Aug
-            2024
-          </li>
-          <li class="card">
-            CCNAv7: Switching, Routing, and Wireless Essentials, Cisco, Aug 2024
-          </li>
-          <li class="card">CCNA: Introduction to Networks, Cisco, Jan 2024</li>
-        </ul>
+        <h3 class="subsection-title reveal-up">Certifications &amp; Licenses</h3>
+        <div class="cert-grid reveal-up delay-1">
+
+          <div class="cert-card">
+            <img src="Images/EC Council.png" alt="EC-Council" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">Certified Cybersecurity Technician</p>
+              <p class="cert-issuer">EC-Council</p>
+              <span class="cert-date">Jan 2026</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/ISC2.jpg" alt="ISC2" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">Certified in Cybersecurity</p>
+              <p class="cert-issuer">ISC2</p>
+              <span class="cert-date">Dec 2025</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Stellar Cyber.png" alt="Stellar Cyber" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">SOC Analyst Associate</p>
+              <p class="cert-issuer">Stellar Cyber</p>
+              <span class="cert-date">Nov 2025</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Microsoft.png" alt="Microsoft" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">Security Essentials Professional Certificate</p>
+              <p class="cert-issuer">Microsoft</p>
+              <span class="cert-date">Oct 2025</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Fortinet.png" alt="Fortinet" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">Certified Associate in Cybersecurity (FCA)</p>
+              <p class="cert-issuer">Fortinet</p>
+              <span class="cert-date">Apr 2025</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Fortinet.png" alt="Fortinet" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">FortiGate 7.4 Operator</p>
+              <p class="cert-issuer">Fortinet</p>
+              <span class="cert-date">Apr 2025</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Cisco.jpg" alt="Cisco" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">CCNA: Enterprise Networking, Security &amp; Automation</p>
+              <p class="cert-issuer">Cisco</p>
+              <span class="cert-date">Aug 2024</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Cisco.jpg" alt="Cisco" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">CCNAv7: Switching, Routing &amp; Wireless Essentials</p>
+              <p class="cert-issuer">Cisco</p>
+              <span class="cert-date">Aug 2024</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Cisco.jpg" alt="Cisco" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">Network Security</p>
+              <p class="cert-issuer">Cisco</p>
+              <span class="cert-date">Jan 2025</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/AWS.png" alt="AWS" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">AWS x INTI Ideathon</p>
+              <p class="cert-issuer">AWS</p>
+              <span class="cert-date">May 2025</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/LinkedIn.png" alt="LinkedIn" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">SIEM: Event Management with Splunk Security</p>
+              <p class="cert-issuer">LinkedIn</p>
+              <span class="cert-date">Oct 2025</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/ISC2.jpg" alt="ISC2" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">ISC2 Candidate</p>
+              <p class="cert-issuer">ISC2</p>
+              <span class="cert-date">Dec 2024</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Cisco.jpg" alt="Cisco" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">Linux Unhatched</p>
+              <p class="cert-issuer">Cisco</p>
+              <span class="cert-date">Dec 2024</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Cisco.jpg" alt="Cisco" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">CCNA: Introduction to Networks</p>
+              <p class="cert-issuer">Cisco</p>
+              <span class="cert-date">Jan 2024</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/LinkedIn.png" alt="LinkedIn" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">Cybersecurity Awareness: Terminology</p>
+              <p class="cert-issuer">LinkedIn</p>
+              <span class="cert-date">Nov 2025</span>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <img src="Images/Microsoft.png" alt="Microsoft" class="cert-logo" onerror="this.style.display='none'">
+            <div class="cert-body">
+              <p class="cert-name">Security Essentials: Concepts, Solutions &amp; AI Protection</p>
+              <p class="cert-issuer">Microsoft / LinkedIn</p>
+              <span class="cert-date">Oct 2025</span>
+            </div>
+          </div>
+
+        </div>
       </section>
+
     </main>
 
+    <!-- ─── FOOTER ─── -->
     <footer>
-      <p>
-        © 2026 Darrshan Erettai Muniandy. Designed with industry best practices.
-      </p>
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>DEM<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p>Built with intention. Secured by design.</p>
+        <p class="footer-copy">© 2026 Darrshan Erettai Muniandy · All rights reserved.</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
