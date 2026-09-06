@@ -8,9 +8,9 @@ const CYAN = new THREE.Color("#00e5ff");
 const VIOLET = new THREE.Color("#7c3aed");
 
 export function ParticleNetwork({
-  count = 140,
-  maxDist = 2.6,
-  spread = 9,
+  count = 65,
+  maxDist = 1.7,
+  spread = 11,
 }: {
   count?: number;
   maxDist?: number;
@@ -35,7 +35,7 @@ export function ParticleNetwork({
       velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.006;
       velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.006;
 
-      const c = Math.random() > 0.72 ? VIOLET : CYAN;
+      const c = Math.random() > 0.85 ? VIOLET : CYAN;
       colors[i * 3] = c.r;
       colors[i * 3 + 1] = c.g;
       colors[i * 3 + 2] = c.b;
@@ -93,7 +93,7 @@ export function ParticleNetwork({
         const dz = arr[i * 3 + 2] - arr[j * 3 + 2];
         const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
         if (dist < maxDist) {
-          const alpha = 1 - dist / maxDist;
+          const alpha = Math.pow(1 - dist / maxDist, 1.6);
           lArr[segIdx * 6] = arr[i * 3];
           lArr[segIdx * 6 + 1] = arr[i * 3 + 1];
           lArr[segIdx * 6 + 2] = arr[i * 3 + 2];
@@ -140,16 +140,16 @@ export function ParticleNetwork({
           <bufferAttribute attach="attributes-color" args={[colors, 3]} />
         </bufferGeometry>
         <pointsMaterial
-          size={0.045}
+          size={0.055}
           vertexColors
           transparent
-          opacity={0.85}
+          opacity={0.75}
           sizeAttenuation
           depthWrite={false}
         />
       </points>
       <lineSegments ref={linesRef} geometry={lineGeometry}>
-        <lineBasicMaterial vertexColors transparent opacity={0.35} depthWrite={false} />
+        <lineBasicMaterial vertexColors transparent opacity={0.2} depthWrite={false} />
       </lineSegments>
     </group>
   );

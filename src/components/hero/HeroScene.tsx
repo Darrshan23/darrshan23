@@ -20,18 +20,19 @@ export default function HeroScene() {
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
     >
       <Suspense fallback={null}>
+        <fog attach="fog" args={["#050a12", 5, 12]} />
         <ambientLight intensity={0.4} />
-        <ParticleNetwork count={isMobile ? 55 : 140} />
+        <ParticleNetwork count={isMobile ? 26 : 65} />
         <CoreNode />
         {!isMobile && (
           <EffectComposer multisampling={0}>
             <Bloom
-              intensity={0.65}
-              luminanceThreshold={0.15}
+              intensity={0.5}
+              luminanceThreshold={0.2}
               luminanceSmoothing={0.9}
               mipmapBlur
             />
-            <Vignette eskil={false} offset={0.15} darkness={0.85} />
+            <Vignette eskil={false} offset={0.2} darkness={0.9} />
           </EffectComposer>
         )}
       </Suspense>

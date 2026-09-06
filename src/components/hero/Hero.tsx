@@ -27,7 +27,7 @@ export function Hero() {
 
   return (
     <header id="hero" className="relative isolate flex min-h-[100svh] overflow-hidden">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_75%_65%_at_50%_42%,black_45%,transparent_100%)]">
         <HeroScene />
       </div>
 
