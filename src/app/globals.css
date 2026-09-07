@@ -24,19 +24,85 @@ html.lenis body {
 }
 
 ::selection {
-  background: rgba(0, 229, 255, 0.16);
-  color: #00e5ff;
+  background: rgba(0, 255, 102, 0.18);
+  color: #7cffb2;
 }
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050a12;
+  background: #050807;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 229, 255, 0.3);
+  background: rgba(0, 255, 102, 0.3);
   border-radius: 999px;
+}
+
+/* CRT scanline overlay: a slow-moving highlight band over a static fine-line texture */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.12) 0px,
+      rgba(0, 0, 0, 0.12) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    linear-gradient(rgba(0, 255, 102, 0.05), rgba(0, 255, 102, 0) 45%);
+  background-size: 100% 100%, 100% 220px;
+  background-repeat: repeat, no-repeat;
+  animation: crt-sweep 9s linear infinite;
+  mix-blend-mode: overlay;
+}
+
+@keyframes crt-sweep {
+  0% {
+    background-position: 0 0, 0 -220px;
+  }
+  100% {
+    background-position: 0 0, 0 100vh;
+  }
+}
+
+.text-glow {
+  text-shadow: 0 0 12px rgba(0, 255, 102, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-overlay {
+    animation: none;
+    display: none;
+  }
+}
+
+@keyframes border-beam-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -46%) scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="border-beam-spin"] {
+    animation: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import { forwardRef, type ReactNode } from "react";
 
 type Direction = "up" | "left" | "right" | "none";
 
@@ -57,21 +57,19 @@ export function Reveal({
   );
 }
 
-export function RevealGroup({
-  children,
-  className,
-  stagger = 0.08,
-  once = true,
-  amount = 0.15,
-}: {
-  children: ReactNode;
-  className?: string;
-  stagger?: number;
-  once?: boolean;
-  amount?: number;
-}) {
+export const RevealGroup = forwardRef<
+  HTMLDivElement,
+  {
+    children: ReactNode;
+    className?: string;
+    stagger?: number;
+    once?: boolean;
+    amount?: number;
+  }
+>(function RevealGroup({ children, className, stagger = 0.08, once = true, amount = 0.15 }, ref) {
   return (
     <motion.div
+      ref={ref}
       className={className}
       initial="hidden"
       whileInView="visible"
@@ -84,7 +82,7 @@ export function RevealGroup({
       {children}
     </motion.div>
   );
-}
+});
 
 export function RevealItem({
   children,

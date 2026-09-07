@@ -31,8 +31,8 @@ export function CoreNode() {
     <group position={[2.7, 0.35, -2.6]}>
       <Icosahedron ref={meshRef} args={[0.85, 4]}>
         <MeshDistortMaterial
-          color="#00e5ff"
-          emissive="#00e5ff"
+          color="#00ff66"
+          emissive="#00ff66"
           emissiveIntensity={0.3}
           roughness={0.2}
           metalness={0.6}
@@ -43,9 +43,9 @@ export function CoreNode() {
         />
       </Icosahedron>
       <Icosahedron ref={wireRef} args={[1.15, 1]}>
-        <meshBasicMaterial color="#7c3aed" wireframe transparent opacity={0.35} />
+        <meshBasicMaterial color="#00e5ff" wireframe transparent opacity={0.3} />
       </Icosahedron>
-      <pointLight color="#00e5ff" intensity={3} distance={5} position={[0, 0, 1]} />
+      <pointLight color="#00ff66" intensity={3} distance={5} position={[0, 0, 1]} />
     </group>
   );
 }

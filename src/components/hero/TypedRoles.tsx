@@ -41,9 +41,9 @@ export function TypedRoles({ roles }: { roles: string[] }) {
 
   return (
     <span className="inline-flex items-center gap-2 font-mono text-[1.05rem] text-ink-2">
-      <span className="text-[0.7rem] text-cyan">•</span>
+      <span className="text-[0.7rem] text-green">•</span>
       <span className="font-medium text-ink-1">{text}</span>
-      <span className="animate-blink text-cyan">|</span>
+      <span className="animate-blink text-green">|</span>
     </span>
   );
 }

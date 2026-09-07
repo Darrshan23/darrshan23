@@ -7,6 +7,7 @@ import { NoiseOverlay } from "@/components/layout/NoiseOverlay";
 import { Preloader } from "@/components/layout/Preloader";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
+import { TooltipProvider } from "@/components/ui/Tooltip";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   title: `${profile.name} | ${profile.title}`,
   description:
     "Cybersecurity Analyst with operational experience in SIEM monitoring, DDoS mitigation, and incident triage. EC-Council CCT | ISC2 CC | Fortinet FCA.",
-  metadataBase: new URL("https://darrshan23.github.io"),
+  metadataBase: new URL("https://darrshan23.vercel.app"),
   openGraph: {
     title: `${profile.name} | ${profile.title}`,
     description:
@@ -43,11 +44,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Preloader />
         <ScrollProgress />
         <NoiseOverlay />
-        <SmoothScrollProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </SmoothScrollProvider>
+        <div className="crt-overlay" />
+        <TooltipProvider>
+          <SmoothScrollProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScrollProvider>
+        </TooltipProvider>
       </body>
     </html>
   );

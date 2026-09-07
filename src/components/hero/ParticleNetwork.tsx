@@ -4,8 +4,8 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
+const GREEN = new THREE.Color("#00ff66");
 const CYAN = new THREE.Color("#00e5ff");
-const VIOLET = new THREE.Color("#7c3aed");
 
 export function ParticleNetwork({
   count = 65,
@@ -35,7 +35,7 @@ export function ParticleNetwork({
       velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.006;
       velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.006;
 
-      const c = Math.random() > 0.85 ? VIOLET : CYAN;
+      const c = Math.random() > 0.8 ? CYAN : GREEN;
       colors[i * 3] = c.r;
       colors[i * 3 + 1] = c.g;
       colors[i * 3 + 2] = c.b;
@@ -102,11 +102,11 @@ export function ParticleNetwork({
           lArr[segIdx * 6 + 5] = arr[j * 3 + 2];
 
           cArr[segIdx * 6] = 0;
-          cArr[segIdx * 6 + 1] = alpha * 0.9;
-          cArr[segIdx * 6 + 2] = alpha;
+          cArr[segIdx * 6 + 1] = alpha;
+          cArr[segIdx * 6 + 2] = alpha * 0.4;
           cArr[segIdx * 6 + 3] = 0;
-          cArr[segIdx * 6 + 4] = alpha * 0.9;
-          cArr[segIdx * 6 + 5] = alpha;
+          cArr[segIdx * 6 + 4] = alpha;
+          cArr[segIdx * 6 + 5] = alpha * 0.4;
 
           segIdx++;
         }

@@ -91,7 +91,7 @@ export function Contact() {
           <div className="relative overflow-hidden rounded-2xl border border-border bg-surface p-7 sm:p-9">
             <div
               className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-60"
-              style={{ background: "radial-gradient(circle, rgba(0,229,255,0.1), transparent 70%)" }}
+              style={{ background: "radial-gradient(circle, rgba(0,255,102,0.1), transparent 70%)" }}
             />
 
             <AnimatePresence mode="wait">
@@ -123,7 +123,7 @@ export function Contact() {
                   {status === "fallback" && (
                     <a
                       href={mailtoHref}
-                      className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-cyan to-[#0af5c8] px-6 py-2.5 text-sm font-bold text-bg"
+                      className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-green to-[#0af5c8] px-6 py-2.5 text-sm font-bold text-bg"
                     >
                       <Mail size={15} /> Open Email Client
                     </a>
@@ -190,7 +190,7 @@ export function Contact() {
                     as="button"
                     type="submit"
                     disabled={status === "submitting"}
-                    className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-br from-cyan to-[#0af5c8] px-8 py-3.5 text-sm font-bold text-bg shadow-[0_4px_24px_rgba(0,229,255,0.3)] transition-shadow hover:shadow-[0_8px_32px_rgba(0,229,255,0.45)] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                    className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-br from-green to-[#0af5c8] px-8 py-3.5 text-sm font-bold text-bg shadow-[0_4px_24px_rgba(0,255,102,0.3)] transition-shadow hover:shadow-[0_8px_32px_rgba(0,255,102,0.45)] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                   >
                     {status === "submitting" ? (
                       <>
@@ -246,14 +246,14 @@ function inputClass(hasError: boolean) {
     "w-full rounded-xl border bg-white/[0.03] px-4 py-3 text-sm text-ink-1 outline-none transition-all duration-200 placeholder:text-ink-3 focus:bg-white/[0.05]",
     hasError
       ? "border-red-500/40 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(248,113,113,0.12)]"
-      : "border-border focus:border-cyan/50 focus:shadow-[0_0_0_3px_rgba(0,229,255,0.12)]"
+      : "border-border focus:border-green/50 focus:shadow-[0_0_0_3px_rgba(0,255,102,0.12)]"
   );
 }
 
 function ContactRow({ icon, label, href }: { icon: React.ReactNode; label: string; href?: string }) {
   const content = (
     <span className="flex items-center gap-3 text-sm text-ink-2 transition-colors group-hover:text-ink-1">
-      <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-surface text-cyan">
+      <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-surface text-green">
         {icon}
       </span>
       {label}
@@ -275,7 +275,7 @@ function SocialLink({ href, icon }: { href: string; icon: React.ReactNode }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-surface text-ink-2 transition-all duration-250 hover:-translate-y-1 hover:border-border-glow hover:bg-cyan/10 hover:text-cyan"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-surface text-ink-2 transition-all duration-250 hover:-translate-y-1 hover:border-border-glow hover:bg-green/10 hover:text-green"
     >
       {icon}
     </a>

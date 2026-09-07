@@ -12,7 +12,7 @@ export function Experience() {
       <SectionHeading number="01" title="Work Experience" />
 
       <div className="relative pl-8">
-        <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-cyan/25 via-violet/15 to-transparent" />
+        <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-green/25 via-violet/15 to-transparent" />
 
         {experience.map((item, i) => (
           <Reveal key={item.company} direction={i % 2 === 0 ? "left" : "right"} className="relative mb-10 last:mb-0">
@@ -20,9 +20,9 @@ export function Experience() {
             <motion.div
               whileHover={{ x: 6 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-colors duration-300 hover:border-border-glow hover:bg-surface-hover hover:shadow-[0_8px_40px_rgba(0,0,0,0.35),0_0_0_1px_rgba(0,229,255,0.1)]"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-colors duration-300 hover:border-border-glow hover:bg-surface-hover hover:shadow-[0_8px_40px_rgba(0,0,0,0.35),0_0_0_1px_rgba(0,255,102,0.1)]"
             >
-              <span className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-cyan via-violet to-transparent transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-green via-violet to-transparent transition-transform duration-300 group-hover:scale-x-100" />
 
               <div className="mb-5 flex flex-wrap items-center gap-5">
                 {item.logo ? (
@@ -36,7 +36,7 @@ export function Experience() {
                 )}
                 <div className="flex-1">
                   <h3 className="text-[1.1rem] font-bold tracking-tight text-ink-1">{item.role}</h3>
-                  <p className="text-sm font-semibold text-cyan">
+                  <p className="text-sm font-semibold text-green">
                     {item.company}
                     {item.location ? ` — ${item.location}` : ""}
                   </p>
@@ -52,7 +52,7 @@ export function Experience() {
               <ul className="space-y-3">
                 {item.bullets.map((b) => (
                   <li key={b.label} className="relative pl-6 text-[0.925rem] leading-relaxed text-ink-2">
-                    <span className="absolute left-0 top-1 text-[0.7rem] text-cyan">▸</span>
+                    <span className="absolute left-0 top-1 text-[0.7rem] text-green">▸</span>
                     <strong className="font-semibold text-ink-1">{b.label}:</strong> {b.text}
                   </li>
                 ))}
@@ -62,7 +62,7 @@ export function Experience() {
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-cyan/15 bg-cyan/10 px-2.5 py-1 font-mono text-[0.72rem] text-cyan"
+                    className="rounded-full border border-green/15 bg-green/10 px-2.5 py-1 font-mono text-[0.72rem] text-green"
                   >
                     {tag}
                   </span>
@@ -78,6 +78,6 @@ export function Experience() {
 
 function TimelineDot() {
   return (
-    <span className="absolute -left-[2.55rem] top-6 h-3 w-3 rounded-full border-2 border-cyan bg-bg shadow-[0_0_10px_rgba(0,229,255,0.5)]" />
+    <span className="absolute -left-[2.55rem] top-6 h-3 w-3 rounded-full border-2 border-green bg-bg shadow-[0_0_10px_rgba(0,255,102,0.5)]" />
   );
 }

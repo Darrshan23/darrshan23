@@ -51,9 +51,9 @@ export function Navbar() {
     >
       <button
         onClick={() => go("hero")}
-        className="font-mono text-[1.3rem] font-semibold tracking-tight text-ink-1 transition-colors hover:text-cyan"
+        className="font-mono text-[1.3rem] font-semibold tracking-tight text-ink-1 transition-colors hover:text-green"
       >
-        <span className="text-cyan">&lt;</span>DEM<span className="text-cyan">/&gt;</span>
+        <span className="text-green">&lt;</span>DEM<span className="text-green">/&gt;</span>
       </button>
 
       <ul className="hidden items-center gap-1 md:flex">
@@ -63,12 +63,12 @@ export function Navbar() {
               onClick={() => go(item.id)}
               className={cn(
                 "group flex items-center rounded-lg px-3.5 py-2 text-sm font-medium text-ink-2 transition-colors hover:bg-surface hover:text-ink-1",
-                active === item.id && "text-cyan"
+                active === item.id && "text-green"
               )}
             >
               <span
                 className={cn(
-                  "mr-0 w-0 overflow-hidden font-mono text-[0.7rem] text-cyan opacity-0 transition-all duration-200 group-hover:mr-1.5 group-hover:w-4 group-hover:opacity-100",
+                  "mr-0 w-0 overflow-hidden font-mono text-[0.7rem] text-green opacity-0 transition-all duration-200 group-hover:mr-1.5 group-hover:w-4 group-hover:opacity-100",
                   active === item.id && "mr-1.5 w-4 opacity-100"
                 )}
               >
@@ -82,7 +82,7 @@ export function Navbar() {
           <a
             href="/Darrshan_Erettai_Muniandy_Resume.pdf"
             download
-            className="ml-3 inline-flex items-center rounded-full border border-cyan/35 bg-cyan/10 px-5 py-2 text-sm font-semibold text-cyan transition-all hover:-translate-y-0.5 hover:bg-cyan/20 hover:shadow-[0_0_20px_rgba(0,229,255,0.25)]"
+            className="ml-3 inline-flex items-center rounded-full border border-green/35 bg-green/10 px-5 py-2 text-sm font-semibold text-green transition-all hover:-translate-y-0.5 hover:bg-green/20 hover:shadow-[0_0_20px_rgba(0,255,102,0.25)]"
           >
             Resume
           </a>
@@ -113,7 +113,7 @@ export function Navbar() {
                 onClick={() => go(item.id)}
                 className={cn(
                   "w-full rounded-lg px-4 py-3 text-left text-sm font-medium text-ink-2 transition-colors hover:bg-surface hover:text-ink-1",
-                  active === item.id && "text-cyan"
+                  active === item.id && "text-green"
                 )}
               >
                 {item.label}
@@ -122,7 +122,7 @@ export function Navbar() {
             <a
               href="/Darrshan_Erettai_Muniandy_Resume.pdf"
               download
-              className="mt-2 w-full rounded-lg border border-cyan/35 bg-cyan/10 px-4 py-3 text-center text-sm font-semibold text-cyan"
+              className="mt-2 w-full rounded-lg border border-green/35 bg-green/10 px-4 py-3 text-center text-sm font-semibold text-green"
             >
               Resume
             </a>

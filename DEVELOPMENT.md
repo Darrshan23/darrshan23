@@ -15,7 +15,14 @@ for anyone building or contributing to the code.)
 | Smooth scroll | Lenis | Inertial scrolling synced with the scroll progress bar; disabled under reduced motion. |
 | Forms | react-hook-form + zod | Client-side validation with a schema shared with the API route. |
 | Email delivery | Resend (Next.js Route Handler) | `POST /api/contact` validates and sends mail. Without `RESEND_API_KEY` it returns `503` and the UI falls back to a pre-filled `mailto:` link. |
+| Text/scroll FX | GSAP + ScrambleTextPlugin | Terminal-style decrypt/scramble text reveals (boot sequence, headings, hero name). Framer Motion owns component enter/exit and hover/tap; GSAP is scoped to scramble-text only, so the two never fight over the same properties. |
+| Headless UI | Radix UI (Dialog, Tooltip) | Accessible, unstyled primitives skinned as terminal windows — the project detail modal and cert-name tooltips. This is the same foundation shadcn/ui is built on. |
+| Dashboard widgets | Tremor | The "Capability Index" panel (cert timeline tracker, skill-domain bar list) — all numbers are derived live from `src/data/*`, never hardcoded. |
+| List transitions | @formkit/auto-animate | Smooth FLIP animation when the certifications grid is filtered by issuer. |
+| Tilt effect | @react-spring/web | A single contained use: the 3D tilt-on-hover for `TerminalWindow`. |
 | Icons | lucide-react | |
+
+Aceternity UI / Magic UI / React Bits are not npm runtime dependencies here — they're copy-paste effect recipes, so their signature patterns (terminal window chrome, spotlight, decrypted text, animated border beam, matrix rain) are hand-built in `src/components/ui` and `src/components/hero` using the stack above, which is how those libraries are meant to be consumed anyway. Full competing component systems (MUI, Chakra UI, Mantine, Ant Design, HeroUI, DaisyUI, Park UI) were deliberately left out — stacking multiple theme engines/CSS runtimes in one app fights itself (bundle bloat, conflicting resets, no coherent visual language) rather than helping.
 
 ## Getting started
 
