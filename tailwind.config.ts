@@ -63,7 +63,9 @@ const config: Config = {
             muted: "#070b09",
             subtle: "#0a0f0c",
             DEFAULT: "#050807",
-            emphasis: "#c9ffe0",
+            // Used as the Tooltip component's background (paired with hardcoded
+            // text-white) — must stay dark regardless of the rest of the palette.
+            emphasis: "#08150f",
           },
           border: { DEFAULT: "rgba(0,255,102,0.14)" },
           ring: { DEFAULT: "rgba(0,255,102,0.14)" },

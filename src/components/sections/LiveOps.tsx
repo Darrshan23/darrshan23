@@ -48,9 +48,17 @@ export function LiveOps() {
           <Text className="!font-mono !text-[0.72rem] !uppercase !tracking-wide !text-tremor-content">
             Certification acquisition timeline
           </Text>
-          <Tracker data={trackerData} className="mt-3" />
+          {/* Tremor's Tracker opens a hover tooltip per block via floating-ui; on touch
+              screens a scroll-drag across 16 adjacent blocks fires rapid enter/leave
+              events and the tooltip flickers open/closed. Disabling pointer events
+              below `sm` removes that interaction entirely (it was never a real "hover"
+              on touch anyway) while keeping it on desktop. */}
+          <div className="pointer-events-none sm:pointer-events-auto">
+            <Tracker data={trackerData} className="mt-3" />
+          </div>
           <Text className="mt-2 !text-[0.7rem] !text-tremor-content-subtle">
-            oldest → most recent, hover a block for details
+            <span className="hidden sm:inline">oldest → most recent, hover a block for details</span>
+            <span className="sm:hidden">oldest → most recent</span>
           </Text>
         </Card>
       </Reveal>
