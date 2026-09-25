@@ -70,15 +70,16 @@ export function LiveOps() {
             </Text>
           </div>
 
-          <div className="flex items-end gap-3 sm:gap-5">
+          <div className="-mx-1 overflow-x-auto pb-1">
+          <div className="flex min-w-[280px] items-end gap-2 px-1 sm:gap-4">
             {years.map((year) => {
               const certs = certsByYear[year];
               return (
                 <div key={year} className="flex flex-col items-center gap-2 flex-1 min-w-0">
                   {/* Dot stack — each dot = 1 cert */}
                   <div
-                    className="flex flex-col-reverse gap-[5px] items-center w-full"
-                    style={{ minHeight: `${maxPerYear * 22}px` }}
+                    className="flex flex-col-reverse gap-[4px] items-center w-full sm:gap-[5px]"
+                    style={{ minHeight: `${maxPerYear * 18}px` }}
                   >
                     {certs.map((cert, i) => {
                       const tipKey = `${year}-${i}`;
@@ -86,14 +87,14 @@ export function LiveOps() {
                       return (
                         <div key={cert.name} className="relative group/dot w-full flex justify-center">
                           <div
-                            className="h-[14px] w-full max-w-[54px] rounded-sm cursor-default transition-all duration-200 group-hover/dot:scale-110 group-hover/dot:brightness-125"
+                            className="h-[11px] w-full max-w-[44px] rounded-sm cursor-default transition-all duration-200 group-hover/dot:scale-110 group-hover/dot:brightness-125 sm:h-[14px] sm:max-w-[54px]"
                             style={{ backgroundColor: color, opacity: 0.75 + (i / certs.length) * 0.25 }}
                             onMouseEnter={() => setHovered(tipKey)}
                             onMouseLeave={() => setHovered(null)}
                           />
                           {/* Tooltip */}
                           {hovered === tipKey && (
-                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-20 w-max max-w-[200px] rounded-lg border border-border bg-surface px-3 py-2 shadow-xl pointer-events-none">
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-20 w-max max-w-[180px] rounded-lg border border-border bg-surface px-2.5 py-2 shadow-xl pointer-events-none sm:max-w-[200px] sm:px-3">
                               <p className="text-[0.73rem] font-semibold text-ink-1 leading-tight">{cert.name}</p>
                               <p className="mt-0.5 font-mono text-[0.65rem] text-green">{cert.issuer} · {cert.date}</p>
                             </div>
@@ -111,6 +112,7 @@ export function LiveOps() {
                 </div>
               );
             })}
+          </div>
           </div>
         </Card>
       </Reveal>

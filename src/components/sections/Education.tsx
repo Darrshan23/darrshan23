@@ -50,11 +50,13 @@ export function Education() {
         ))}
       </div>
 
-      <Reveal className="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <h3 className="text-[1.3rem] font-semibold tracking-tight text-ink-1">
-          Certifications &amp; Licenses
-        </h3>
-        <p className="font-mono text-[0.7rem] text-ink-3">{filtered.length} credential{filtered.length !== 1 ? 's' : ''}</p>
+      <Reveal className="mb-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
+        <div className="flex items-center gap-3">
+          <h3 className="text-[1.3rem] font-semibold tracking-tight text-ink-1">
+            Certifications &amp; Licenses
+          </h3>
+          <p className="font-mono text-[0.7rem] text-ink-3">{filtered.length} credential{filtered.length !== 1 ? 's' : ''}</p>
+        </div>
         <div className="flex flex-wrap gap-2">
           {issuers.map((issuer) => (
             <button

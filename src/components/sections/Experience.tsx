@@ -11,7 +11,7 @@ export function Experience() {
     <section id="experience" className="mx-auto max-w-[1200px] px-[5%] py-28 border-t border-border">
       <SectionHeading number="01" title="Work Experience" />
 
-      <div className="relative pl-8">
+      <div className="relative pl-6 sm:pl-8">
         <div className="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-green/25 via-violet/15 to-transparent" />
 
         {experience.map((item, i) => (
@@ -78,6 +78,6 @@ export function Experience() {
 
 function TimelineDot() {
   return (
-    <span className="absolute -left-[2.55rem] top-6 h-3 w-3 rounded-full border-2 border-green bg-bg shadow-[0_0_10px_rgba(0,255,102,0.5)]" />
+    <span className="absolute -left-[1.9rem] top-6 h-3 w-3 rounded-full border-2 border-green bg-bg shadow-[0_0_10px_rgba(0,255,102,0.5)] sm:-left-[2.55rem]" />
   );
 }

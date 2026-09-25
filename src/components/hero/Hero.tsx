@@ -48,8 +48,8 @@ export function Hero() {
       />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-grid-faint bg-[size:52px_52px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_35%,black,transparent)] opacity-40" />
 
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col-reverse items-center gap-10 px-[5%] pb-16 pt-[calc(72px+2.5rem)] md:flex-row md:items-center md:justify-between md:gap-16 md:pt-[calc(72px+3rem)]">
-        <div className="max-w-[640px] text-center md:text-left">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col-reverse items-center gap-8 px-[5%] pb-14 pt-[calc(72px+1.5rem)] sm:gap-10 sm:pb-16 sm:pt-[calc(72px+2.5rem)] md:flex-row md:items-center md:justify-between md:gap-16 md:pt-[calc(72px+3rem)]">
+        <div className="w-full max-w-[640px] text-center md:text-left">
           <motion.p
             custom={0}
             initial="hidden"
@@ -84,12 +84,12 @@ export function Hero() {
           </motion.div>
 
           <motion.div custom={3} initial="hidden" animate="visible" variants={fadeUp} className="mb-8">
-            <TerminalWindow title="visitor@dem:~$ cat about.md" className="mx-auto max-w-[560px] text-left md:mx-0">
+            <TerminalWindow title="visitor@dem:~$ cat about.md" className="mx-auto max-w-full text-left sm:max-w-[560px] md:mx-0">
               <p className="text-[0.95rem] leading-relaxed text-ink-2">{profile.summary}</p>
-              <div className="mt-5 flex flex-wrap gap-2.5">
+              <div className="mt-5 flex flex-wrap gap-2">
                 <Badge icon={<MapPin size={14} />} text={profile.location} />
                 <Badge icon={<Phone size={14} />} text={profile.phone} />
-                <Badge icon={<Mail size={14} />} text={profile.email} />
+                <Badge icon={<Mail size={14} />} text={profile.email} truncate />
               </div>
             </TerminalWindow>
           </motion.div>
@@ -126,7 +126,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-shrink-0 flex-col items-center"
         >
-          <div className="relative h-[220px] w-[220px] sm:h-[280px] sm:w-[280px] md:h-[310px] md:w-[310px]">
+          <div className="relative h-[190px] w-[190px] sm:h-[260px] sm:w-[260px] md:h-[310px] md:w-[310px]">
             <div className="animate-[spin_20s_linear_infinite_reverse] absolute left-1/2 top-1/2 h-[112%] w-[112%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-violet/25" />
             <div className="absolute left-1/2 top-1/2 h-[128%] w-[128%] -translate-x-1/2 -translate-y-1/2 animate-[spin_12s_linear_infinite] rounded-full border border-green/[0.12]" />
             <div className="group relative z-10 h-full w-full overflow-hidden rounded-full border-[3px] border-green/20 shadow-[0_0_0_8px_rgba(0,255,102,0.04),0_20px_60px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:scale-[1.04]">
@@ -141,7 +141,7 @@ export function Hero() {
               />
             </div>
           </div>
-          <div className="mt-6 flex items-center gap-2 rounded-full border border-signal/20 bg-signal/[0.08] px-4 py-2 font-mono text-[0.82rem] font-medium text-signal">
+          <div className="mt-5 flex items-center gap-2 rounded-full border border-signal/20 bg-signal/[0.08] px-3 py-1.5 font-mono text-[0.72rem] font-medium text-signal sm:px-4 sm:py-2 sm:text-[0.82rem]">
             <span className="h-[7px] w-[7px] animate-pulse-dot rounded-full bg-signal shadow-[0_0_8px_#10dc5a]" />
             STATUS: ONLINE — open to opportunities
           </div>
@@ -161,11 +161,11 @@ export function Hero() {
   );
 }
 
-function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
+function Badge({ icon, text, truncate }: { icon: React.ReactNode; text: string; truncate?: boolean }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-[0.8rem] text-ink-2 transition-colors hover:border-border-glow hover:bg-surface-hover hover:text-ink-1">
-      <span className="text-green">{icon}</span>
-      {text}
+    <span className="inline-flex min-w-0 items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-[0.77rem] text-ink-2 transition-colors hover:border-border-glow hover:bg-surface-hover hover:text-ink-1 sm:px-4 sm:py-2 sm:text-[0.8rem]">
+      <span className="flex-shrink-0 text-green">{icon}</span>
+      <span className={truncate ? "max-w-[160px] truncate sm:max-w-none" : ""}>{text}</span>
     </span>
   );
 }

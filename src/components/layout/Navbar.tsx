@@ -51,9 +51,18 @@ export function Navbar() {
     >
       <button
         onClick={() => go("hero")}
-        className="font-mono text-[1.3rem] font-semibold tracking-tight text-ink-1 transition-colors hover:text-green"
+        className="font-mono text-[1.3rem] font-semibold tracking-tight transition-colors"
       >
-        <span className="text-green">&lt;</span>DEM<span className="text-green">/&gt;</span>
+        <style>{`
+          @keyframes dem-pulse {
+            0%, 100% { color: #00ff66; text-shadow: 0 0 8px rgba(0,255,102,0.5); }
+            50%       { color: #ff2244; text-shadow: 0 0 12px rgba(255,34,68,0.6); }
+          }
+          #dem-logo { animation: dem-pulse 2s ease-in-out infinite; }
+        `}</style>
+        <span id="dem-logo">
+          <span>&lt;</span>DEM<span>/&gt;</span>
+        </span>
       </button>
 
       <ul className="hidden items-center gap-1 md:flex">
@@ -112,10 +121,14 @@ export function Navbar() {
                 key={item.id}
                 onClick={() => go(item.id)}
                 className={cn(
-                  "w-full rounded-lg px-4 py-3 text-left text-sm font-medium text-ink-2 transition-colors hover:bg-surface hover:text-ink-1",
+                  "flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left text-sm font-medium text-ink-2 transition-colors hover:bg-surface hover:text-ink-1",
                   active === item.id && "text-green"
                 )}
               >
+                <span className={cn(
+                  "font-mono text-[0.7rem] text-green/60 transition-colors",
+                  active === item.id && "text-green"
+                )}>{item.index}</span>
                 {item.label}
               </button>
             ))}
