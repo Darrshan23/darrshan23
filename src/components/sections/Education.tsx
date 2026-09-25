@@ -1,11 +1,11 @@
 "use client";
 
-import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { education, certifications } from "@/data/education";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { InfoTooltip } from "@/components/ui/Tooltip";
 import { cn } from "@/lib/utils";
 
@@ -15,7 +15,6 @@ export function Education() {
     []
   );
   const [filter, setFilter] = useState("All");
-  const [gridRef] = useAutoAnimate<HTMLDivElement>({ duration: 250 });
 
   const filtered =
     filter === "All" ? certifications : certifications.filter((c) => c.issuer === filter);
@@ -55,6 +54,7 @@ export function Education() {
         <h3 className="text-[1.3rem] font-semibold tracking-tight text-ink-1">
           Certifications &amp; Licenses
         </h3>
+        <p className="font-mono text-[0.7rem] text-ink-3">{filtered.length} credential{filtered.length !== 1 ? 's' : ''}</p>
         <div className="flex flex-wrap gap-2">
           {issuers.map((issuer) => (
             <button
@@ -73,31 +73,36 @@ export function Education() {
         </div>
       </Reveal>
 
-      <RevealGroup
-        ref={gridRef}
-        className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
-        stagger={0.04}
-      >
-        {filtered.map((cert) => (
-          <RevealItem key={cert.name}>
-            <div className="group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-surface p-4 transition-all duration-300 hover:translate-x-1 hover:border-border-glow hover:bg-surface-hover hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
-              <span className="absolute inset-y-0 left-0 w-[3px] scale-y-0 bg-gradient-to-b from-green to-violet transition-transform duration-300 group-hover:scale-y-100" />
-              <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-0.5">
-                <Image src={cert.logo} alt={cert.issuer} width={36} height={36} className="h-full w-full object-contain" />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatePresence mode="popLayout">
+          {filtered.map((cert) => (
+            <motion.div
+              key={cert.name}
+              layout
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: -6 }}
+              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-surface p-4 transition-all duration-300 hover:translate-x-1 hover:border-border-glow hover:bg-surface-hover hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+                <span className="absolute inset-y-0 left-0 w-[3px] scale-y-0 bg-gradient-to-b from-green to-violet transition-transform duration-300 group-hover:scale-y-100" />
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-0.5">
+                  <Image src={cert.logo} alt={cert.issuer} width={36} height={36} className="h-full w-full object-contain" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <InfoTooltip label={cert.name}>
+                    <p className="cursor-default truncate text-[0.82rem] font-semibold leading-tight text-ink-1">
+                      {cert.name}
+                    </p>
+                  </InfoTooltip>
+                  <p className="font-mono text-[0.7rem] font-medium text-green">{cert.issuer}</p>
+                  <p className="font-mono text-[0.68rem] text-ink-3">{cert.date}</p>
+                </div>
               </div>
-              <div className="min-w-0 flex-1">
-                <InfoTooltip label={cert.name}>
-                  <p className="cursor-default truncate text-[0.82rem] font-semibold leading-tight text-ink-1">
-                    {cert.name}
-                  </p>
-                </InfoTooltip>
-                <p className="font-mono text-[0.7rem] font-medium text-green">{cert.issuer}</p>
-                <p className="font-mono text-[0.68rem] text-ink-3">{cert.date}</p>
-              </div>
-            </div>
-          </RevealItem>
-        ))}
-      </RevealGroup>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
     </section>
   );
 }
