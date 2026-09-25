@@ -82,7 +82,6 @@ export function Contact() {
             <div className="mt-10 flex gap-3">
               <SocialLink href={profile.socials.linkedin} icon={<Linkedin size={17} />} />
               <SocialLink href={profile.socials.github} icon={<Github size={17} />} />
-              <SocialLink href={profile.socials.medium} icon={<Newspaper size={17} />} />
             </div>
           </div>
         </Reveal>

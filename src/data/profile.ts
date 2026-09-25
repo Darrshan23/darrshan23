@@ -27,6 +27,5 @@ export const profile = {
   socials: {
     linkedin: "https://www.linkedin.com/in/darrshan-erettai-muniandy/",
     github: "https://github.com/Darrshan23",
-    medium: "http://www.medium.com/darrshan2003",
   },
 };
